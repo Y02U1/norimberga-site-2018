@@ -4,32 +4,32 @@ var imgcurrent = 0;
 var counter = 0;
 var previous = window.scrollY;
 
-var myEfficientFn = debounce(function() {
+var debouncedSlide = debounce(function() {
     console.log("Scrollato a: "+window.scrollY);
     console.log("Precedentemente: "+previous);
     if (window.scrollY > previous) {
         console.log('down');
         var pos = determineScrollPos(false);
-        window.removeEventListener("scroll", myEfficientFn);
+        window.removeEventListener("scroll", debouncedSlide);
         scrollIt(pos);
         setTimeout(function() {
-            window.addEventListener("scroll", myEfficientFn);
+            window.addEventListener("scroll", debouncedSlide);
         }, 300);
         previous = getCoords(imgs[imgcurrent]).top;
     } else {
         console.log('up');
         var pos = determineScrollPos(true);
-        window.removeEventListener("scroll", myEfficientFn);
+        window.removeEventListener("scroll", debouncedSlide);
         scrollIt(pos);
         setTimeout(function() {
-            window.addEventListener("scroll", myEfficientFn);
+            window.addEventListener("scroll", debouncedSlide);
         }, 300);
         previous = getCoords(imgs[imgcurrent]).top;
     }
     console.log("\"Previous\" ora è a: "+previous);
 }, 200, true);
 
-window.addEventListener("scroll", myEfficientFn);
+window.addEventListener("scroll", debouncedSlide);
 
 function logScrollDirection() {
     if (window.scrollY > previous) {
