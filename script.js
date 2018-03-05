@@ -4,11 +4,12 @@ var imgcurrent = 0;
 var counter = 0;
 var previous = window.scrollY;
 
+// TODO scrolling OutOfBorder down
 var debouncedSlide = debounce(function() {
-    console.log("Scrollato a: "+window.scrollY);
-    console.log("Precedentemente: "+previous);
+    // console.log("Scrollato a: "+window.scrollY);
+    // console.log("Precedentemente: "+previous);
     if (window.scrollY > previous) {
-        console.log('down');
+        // console.log('down');
         var pos = determineScrollPos(false);
         window.removeEventListener("scroll", debouncedSlide);
         scrollIt(pos);
@@ -17,7 +18,7 @@ var debouncedSlide = debounce(function() {
         }, 300);
         previous = getCoords(imgs[imgcurrent]).top;
     } else {
-        console.log('up');
+        // console.log('up');
         var pos = determineScrollPos(true);
         window.removeEventListener("scroll", debouncedSlide);
         scrollIt(pos);
@@ -26,18 +27,18 @@ var debouncedSlide = debounce(function() {
         }, 300);
         previous = getCoords(imgs[imgcurrent]).top;
     }
-    console.log("\"Previous\" ora è a: "+previous);
+    // console.log("\"Previous\" ora è a: "+previous);
 }, 200, true);
 
 window.addEventListener("scroll", debouncedSlide);
 
 function logScrollDirection() {
     if (window.scrollY > previous) {
-        console.log('down');
+        // console.log('down');
         var pos = determineScrollPos(false);
         scrollIt(pos);
     } else {
-        console.log('up');
+        // console.log('up');
         var pos = determineScrollPos(true);
         scrollIt(pos);
     }
@@ -157,6 +158,7 @@ function throttle(func, wait, options) {
 // be triggered. The function will be called after it stops being called for
 // N milliseconds. If `immediate` is passed, trigger the function on the
 // leading edge, instead of the trailing.
+// TODO documentazione
 function debounce(func, wait, immediate) {
 	var timeout;
 	return function() {
