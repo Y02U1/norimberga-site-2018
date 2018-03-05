@@ -1,0 +1,306 @@
+html, body {
+    margin: 0px;
+    height: 500%;
+    overflow-x: hidden;
+}
+
+body {
+    height: 100%;
+}
+
+#side-menu > * {
+    color: white;
+}
+
+#side-menu {
+    width: 0%; /* Lunghezza fissa per la barra sulla SX */
+    height: 100%;
+    position: fixed;
+    overflow: hidden; /* Permetti l'overflow, necessario per le tooltip e da alternare durante la transizione */
+    z-index: 1;
+
+    background-color: rgb(56, 0, 0);
+    transition: width 0.7s;
+    font-size: 1em;
+}
+
+#fullpage {
+    width: 100%; /**/
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    transform: translateX(0%);
+    transition: transform 0.7s;
+}
+
+.img {
+    flex: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    flex-basis: 0;
+}
+
+.img1 {
+    background-image: url("../images/bg-intro.jpg");
+}
+.img2 {
+    background-image: url("../images/bg-norimberga.jpg");
+}
+.img3 {
+    background-image: url("../images/bg-monaco.jpg");
+}
+.img4 {
+    background-image: url("../images/bg-swarovski.jpg");
+}
+.img5 {
+    background-image: url("../images/bg-bmw.jpg");
+}
+
+.img > div {
+    background-color: rgba(56, 0, 0, 0.85);
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 40%;
+    height: 100%;
+    /* z-index: 1; */
+}
+
+.img > div > * {
+    color: white;
+}
+
+h2 {
+    margin-top: 0;
+    padding-top: 5%;
+}
+
+h1 {
+    margin-top: 0px;
+    font-size: 3em;
+}
+
+.btn-round {
+    display: block; /* Manda a capo <span> */
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
+    margin: 0 auto;
+
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+    font-size: 3em;
+    color: white;
+}
+
+.buttons-intro td:nth-child(1){
+    text-align: center;
+    font-style: italic;
+    font-size: 2em;
+}
+
+.buttons-intro td:nth-child(2){
+    vertical-align: middle;
+}
+
+#hint {
+    font-size: 2em;
+    text-align: center;
+    font-style: italic;
+}
+
+.desc {
+    height: 100%;
+}
+
+.city-summary, .city-summary td {
+    border: solid 1px white;
+    border-collapse: collapse;
+}
+
+/* BEGIN */
+
+ul { list-style-type: none; /* Togli i punti agli <ul> */ }
+
+#side-menu > ul {
+    padding: 0%; /* Togli il padding dal primo elenco del menu */
+    margin: 0%; /* Togli il margine del primo elenco del menu */
+}
+
+#side-menu-title {
+    text-align: center;
+    padding: 10% 0% 10% 0%;
+    text-transform: capitalize;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.5em;
+}
+
+li.menu-el { text-transform: uppercase; }
+
+li#father {
+    padding-bottom: 0%;
+    padding-top: 5%;
+    cursor: pointer;
+}
+
+li#father::before {
+    content: "";
+    padding-left: 5%;
+}
+
+ul#sub-menulist { padding: 5% 0% 0% 0%; }
+
+/* Singolo elemento del sottomenu dei giorni */
+li.submenu-el {
+    background-color: #FF8547;
+    padding: 0% 0% 0% 5%; /* Spazio SX 2 - modifica 5% */
+    transition: height 1s;
+    height: 40px;
+}
+
+#btn1 {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),url("../images/btn1-swarovski.jpg");
+    background-size: cover;
+}
+
+#btn2 {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ), url("../images/btn2-fabercastell.jpg");
+    background-size: cover;
+}
+
+#btn3 {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),url("../images/btn3-hauptmarkt.jpg");
+    background-size: cover;
+}
+
+#btn4 {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),url("../images/btn4-deutches.jpg");
+    background-size: cover;
+}
+
+#btn5 {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),url("../images/btn5-bmw.jpg");
+    background-size: cover;
+}
+
+#btn6 {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),url("../images/btn6-dachau.jpg");
+    background-size: cover;
+}
+
+#circle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: fixed;
+    top: 40%;
+    left: -50px; /* MODIFICARE QUA FIXME */
+    background-color: #FF5747;
+    transition: left 1s;
+    z-index: 1;
+}
+
+#right-circle {
+    height: 100%;
+    width: 50%;
+    float: right;
+}
+
+#openmenu {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+li > a {
+    color: rgb(167, 167, 167);
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.open-menu {
+    font-size: 30px;    /* Dimensione grande */
+    cursor: pointer;    /* Cambia il cursore */
+    line-height: 100px; /* Centra il testo */
+    padding-left: 10px; /* Sposta la freccia un po' da SX */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tooltip-trigger > .tooltip {
+    display: table-cell;
+    opacity: 0;
+    width: 300px;
+    height: 128px;
+    background-color: rgb(108, 255, 136);
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: relative;
+    left: 90%;
+    top: -40%;
+    z-index: -1;
+    transition: left 1s, opacity 1s;
+    text-transform: none;
+}
+
+.tooltip-trigger > .tooltip > ul { padding: 10px 0px 0px 0px; }
+
+.tooltip-trigger > .tooltip > ul > li { padding: 3px 0px 3px 0px; }
+
+.tooltip-trigger:hover > .tooltip {
+    left: 110%;
+    opacity: 1;
+    z-index: 0;
+}
+
+.tooltip-trigger > .tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgb(108, 255, 136) transparent transparent;
+}
+
+.sublink {
+    transition: left 0.5s;
+    transition-timing-function: ease-in;
+    color: white;
+    /* font-weight: bold; */
+}
+
+#collapse-menu {
+    padding: 10px;
+    cursor: pointer;
+}

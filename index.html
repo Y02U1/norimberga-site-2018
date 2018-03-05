@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Example</title>
+        <link rel="stylesheet" type="text/css" href="style/style.css" />
+        <link rel="stylesheet" type="text/css" href="style/font-ivan.css" />
+    </head>
+    <body>
+        <div id="side-menu">
+			<ul>
+					<li id="collapse-menu" class="menu-el" onclick="collapseMenu();"><i class="icon-leftarrow"></i>&nbsp;Nascondi&nbsp;menu</li>
+					<li id="side-menu-title">Monaco&nbsp;di&nbsp;Baviera<br />Norimberga<br />A.S.&nbsp;2017-2018</li>
+					<li class="menu-el"><a href="index.html">Home</a></li>
+					<li id="father" onclick="collapseSubmenu();" class="menu-el"><i class="icon-downarrow"></i>&nbsp;Elenco&nbsp;giorni
+						<ul id="sub-menulist">
+							<li class="menu-el submenu-el tooltip-trigger" id="btn1">
+								<a class="sublink" href="days/day1.html">Luned&igrave;</a>
+								<span class="tooltip">
+									<b>Giorno 1 - Viaggio di andata (tappa a Wattens, AUT)</b><br />
+									<ul>
+										<li>Museo Swarovski Crystal Worlds</li>
+									</ul>
+								</span>
+							</li>
+							<li class="menu-el submenu-el tooltip-trigger" id="btn2">
+								<a class="sublink" href="days/day2.html">Marted&igrave;</a>
+								<span class="tooltip">
+									<b>Giorno 2 - Norimberga (DE)</b><br />
+									<ul>
+										<li>Faber-Castell</li>
+										<li>Museo Nazionale Germanico</li>
+									</ul>
+								</span>
+							</li>
+							<li class="menu-el submenu-el tooltip-trigger" id="btn3">
+								<a class="sublink" href="days/day3.html">Mercoled&igrave;</a>
+								<span class="tooltip">
+									<b>Giorno 3 - Norimberga (DE)</b><br />
+									<ul>
+										<li>Piazza del mercato e Schonen Brunnen</li>
+										<li>Frauenkirche</li>
+										<li>Cattedrale di S. Sebaldo</li>
+										<li>Memoriale dei Processi di Norimberga</li>
+									</ul>
+								</span>
+							</li>
+							<li class="menu-el submenu-el tooltip-trigger" id="btn4">
+								<a class="sublink" href="days/day4.html">Gioved&igrave;</a>
+								<span class="tooltip">
+									<b>Giorno 4 - Monaco di Baviera (DE)</b><br />
+									<ul>
+										<li>Allianz Arena (facoltativo)</li>
+										<li>Deutches Museum</li>
+									</ul>
+								</span>
+							</li>
+							<li class="menu-el submenu-el tooltip-trigger" id="btn5">
+								<a class="sublink" href="days/day5.html">Venerd&igrave;</a>
+								<span class="tooltip">
+									<b>Giorno 5 - Monaco di Baviera (DE)</b><br />
+									<ul>
+										<li>Museo BMW e BMW Welt</li>
+										<li>Residenz</li>
+										<li>Teatro Cuvilliès</li>
+									</ul>
+								</span>
+							</li>
+							<li class="menu-el submenu-el tooltip-trigger" id="btn6">
+								<a class="sublink" href="days/day6.html">Sabato</a>
+								<span class="tooltip">
+									<b>Giorno 6 - Viaggio di ritorno (tappa a Dachau e Innsbruck, DE e AUT)</b><br />
+									<ul>
+										<li>Campo di sterminio di Dachau</li>
+										<li>Centro storico di Innsbruck</li>
+									</ul>
+								</span>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-el"><a href="download.html">Download</a></li>
+					<li class="menu-el"><a href="maps.html">Mappe</a></li>
+					<li class="menu-el"><a href="table_monuments.html">Monumenti</a></li>
+					<li class="menu-el"><a href="services.html">Agenzia</a></li>
+					<li class="menu-el"><a href="gallery.html">Galleria</a></li>
+				</ul>
+		</div>
+        <div id="circle">
+            <div id="right-circle">
+                <i onclick="openMenu();" class="icon-rightarrow open-menu"></i>
+            </div>
+        </div>
+        <div id="fullpage" onscroll="scrollcode();">
+            <!-- Intro -->
+            <div class="img img1">
+                <div>
+                    <h2>Viaggio d'istruzione A.S. 2017-2018</h2>
+                    <h1>Norimberga - Monaco di Baviera</h1>
+                    <table class="buttons-intro">
+                        <tr>
+                            <td>
+                                <button class="btn-round">A</button>
+                            </td>
+                            <td>
+                                In Germania, precisamente la ricca regione della Baviera e le sue 2 città più grandi: Norimberga e Monaco di Baviera.<br />
+                                Il viaggio inoltre farà 2 volte tappa in Austria nel distretto di Innsbruck-Land: a Wattens e al capoluogo Innsbruck.<br />
+                                Una rispettosa visita sarà anche fatta al campo di sterminio di Dachau.
+                            </td>
+                        </tr>
+                        <tr><td><span>Dove?</span></td></tr>
+                        <tr>
+                            <td>
+                                <button class="btn-round">A</button>
+                            </td>
+                            <td>
+                                Partenza lunedì 9 aprile alle ore XX:XX ed arrivo sabato 14 aprile alle YY:YY.
+                            </td>
+                        </tr>
+                        <tr><td><span>Quando?</span></td></tr>
+                        <tr>
+                            <td>
+                                <button class="btn-round">A</button>
+                            </td>
+                            <td>
+                                Entrambe le città tedesche, assieme allo Swarovski Kristallwelten di Wattens, dispongono di numerose esposizioni utili all'approfondimento del nostro indirizzo di studio.<br />
+                                Dal punto di vista storico-culturale Norimberga e Dachau offrono numerosi spunti di riflessione, dall'alto degli avvenimenti della Seconda Guerra Mondiale.
+                            </td>
+                        </tr>
+                        <tr><td><span>La scelta</span></td></tr>
+                    </table>
+                    <p id="hint">
+                        Scorri la pagina per sapere di più!<br /><br />Oppure premi sulla freccia a sinistra per aprire il menu e vedere le opzioni di navigazione.
+                    </p>
+                </div>
+            </div>
+            <!-- Norimberga -->
+            <div class="img img2">
+                <div>
+                    <h2>Norimberga</h2>
+                    <h3>Sommario</h3>
+                    <table class="city-summary">
+                        <tr>
+                            <td>Abitanti</td>
+                            <td>509.975</td>
+                        </tr>
+                        <tr>
+                            <td>Clima</td>
+                            <td>Leggermente continentale: inverni freddi ed estati miti, in inverno si raggiungono temperature sotto lo zero mentre d’estate si oltrepassano i 20°.</td>
+                        </tr>
+                        <tr>
+                            <td>Valuta</td>
+                            <td>Euro</td>
+                        </tr>
+                    </table>
+                    <p>
+                        Seconda città della Baviera (stati federati della Germania).
+                        Nel 2005 è stata costruita un’area metropolitana per Norimberga e dintorni.
+                        Ha avuto molti gemellaggi con altre citta’, l’ultimo di questi è stato con Venezia nel 1999.
+                        L’economia della citta’ ha avuto un forte sviluppo nel dopoguerra nel settore dell’industria.
+                    </p>
+                    <h3>Storia</h3>
+                    <p>
+                        La prima citazione della città di Nuorenberc (monte roccioso) risale al 1050 in un documento dell'imperatore Enrico III, nel 1219 l'imperatore Federico II le accorda il privilegio di
+                        intitolarsi "città libera" e di autogovernarsi con istituzioni autonome.
+                        La città si espanse dal 1400 al 1600 grazie ad una fiorente attività commerciale sostenuta da scambi con tutta l'Europa ed una altrettanto vivace vita culturale e artistica.
+                        Storicamente, la città, di aspetto monumentale, faceva da sfondo tradizionale per le diete (riunioni) imperiali.
+                        La scoperta del nuovo mondo e l'esclusione della città dalle nuove vie commerciali seguiti dalla guerra dei Trent'anni provocarono una lenta decadenza interrotta solo nel XIX secolo
+                        con la nascita e l'espansione dell'industria del giocattolo.
+                        Nella storia contemporanea, Norimberga è stata la roccaforte del potere nazista insieme a Monaco di Baviera e alla capitale Berlino.
+                        La città ha rivestito un ruolo importante sia come sede di raduni di propaganda hitleriana,
+                        presso lo Zeppelinwiese (le cui strutture sono ancora parzialmente visibili) in cui si teneva annualmente il Parteitag,
+                        e città in cui furono emanate le leggi razziali del 1935, sia, alla fine della seconda guerra mondiale, come sede del tribunale speciale alleato che processò i criminali di guerra nazisti.
+                    </p>
+                </div>
+            </div>
+            <!-- Monaco di Baviera -->
+            <div class="img img3">
+                <div>
+                    <h2>Monaco di Baviera</h2>
+                    <h3>Sommario</h3>
+                    <table class="city-summary">
+                        <tr>
+                            <td>Abitanti</td>
+                            <td>1.528.849</td>
+                        </tr>
+                        <tr>
+                            <td>Clima</td>
+                            <td>Continentale: inverni lunghi e rigidi (dovuti alla vicinanza con le Alpi) ed estati calde, in inverno si raggiungono sovente i -15°C mentre d’estate si oltrepassano spesso i 25°.</td>
+                        </tr>
+                        <tr>
+                            <td>Valuta</td>
+                            <td>Euro</td>
+                        </tr>
+                    </table>
+                    <p>
+                        Seconda città della Baviera (stati federati della Germania).
+                        Nel 2005 è stata costruita un’area metropolitana per Norimberga e dintorni.
+                        Ha avuto molti gemellaggi con altre citta’, l’ultimo di questi è stato con Venezia nel 1999.
+                        L’economia della citta’ ha avuto un forte sviluppo nel dopoguerra nel settore dell’industria.
+                    </p>
+                    <h3>Storia</h3>
+                    <p>
+                        La prima citazione della città di Nuorenberc (monte roccioso) risale al 1050 in un documento dell'imperatore Enrico III, nel 1219 l'imperatore Federico II le accorda il privilegio di
+                        intitolarsi "città libera" e di autogovernarsi con istituzioni autonome.
+                        La città si espanse dal 1400 al 1600 grazie ad una fiorente attività commerciale sostenuta da scambi con tutta l'Europa ed una altrettanto vivace vita culturale e artistica.
+                        Storicamente, la città, di aspetto monumentale, faceva da sfondo tradizionale per le diete (riunioni) imperiali.
+                        La scoperta del nuovo mondo e l'esclusione della città dalle nuove vie commerciali seguiti dalla guerra dei Trent'anni provocarono una lenta decadenza interrotta solo nel XIX secolo
+                        con la nascita e l'espansione dell'industria del giocattolo.
+                        Nella storia contemporanea, Norimberga è stata la roccaforte del potere nazista insieme a Monaco di Baviera e alla capitale Berlino.
+                        La città ha rivestito un ruolo importante sia come sede di raduni di propaganda hitleriana,
+                        presso lo Zeppelinwiese (le cui strutture sono ancora parzialmente visibili) in cui si teneva annualmente il Parteitag,
+                        e città in cui furono emanate le leggi razziali del 1935, sia, alla fine della seconda guerra mondiale, come sede del tribunale speciale alleato che processò i criminali di guerra nazisti.
+                    </p>
+                </div>
+            </div>
+            <!-- Altri luoghi -->
+            <div class="img img4">
+                <div>
+                    <h2>Altro?</h2>
+                    <p>
+                        Il viaggio d'istruzione non ruoterà solamente attorno alle attrazioni delle città bavaresi di Norimberga e Monaco: vedremo anche altro.
+                    </p>
+                    <h3>Swarovski Kristallwelten, Wattens</h3>
+                    <p>
+                        La prima tappa del viaggio d'istruzione non sarà in Germania, ma in Austria: a Wattens, dove vedremo il Mondo di Cristalli Swarovski.
+                    </p>
+                    <h3>Campo di sterminio di Dachau</h3>
+                    <p>
+                        Vicino a Monaco di Baviera visiteremo anche il campo di sterminio di Dachau, vero monumento alla memoria della Shoah e primo campo di concentramento nazista della storia.
+                    </p>
+                    <h3>Innsbruck</h3>
+                    <p>
+                        Il viaggio di ritorno dalle città tedesche farà tappa in Austria, ad Innsbruck, dove un pomeriggio verrà speso nella visita della cittadina austriaca.
+                    </p>
+                </div>
+            </div>
+            <!-- Perché? ASL -->
+            <div class="img img5">
+                <div>
+                    <h2>Perché?</h2>
+                    <table class="buttons-intro">
+                        <tr>
+                            <td>
+                                <button class="btn-round">A</button>
+                            </td>
+                            <td>
+                                Il viaggio d'istruzione non è effettuato a scopo ludico, ma piuttosto per imparare. E così sarà anche per gli indirizzi tecnici del nostro istituto superiore.
+                                Vedremo l'uso delle fibre ottiche in ambito ricreativo (Swarovski Kristallwelten, Wattens), un ambiente di produzione altamente informatizzato (Faber-Castell, Stein),
+                                il più ricco museo storico-culturale di Germania (Museo Nazionale Germanico, Norimberga), il più grande museo a tema scientifico del mondo (Deutches Museum, Monaco di Baviera)
+                                e la sede centrale della BMW, con uno sguardo alla storia del marchio e alle future tecnologie (BMW Museum & BMW Welt, Monaco di Baviera).
+                            </td>
+                        </tr>
+                        <tr><td><span>ASL</span></td></tr>
+                        <tr>
+                            <td>
+                                <button class="btn-round">A</button>
+                            </td>
+                            <td>
+                                La scuola non è fatta di solo studio, ma anche di esperienze nel gruppo della classe. Per rendere più coese queste relazioni, non c'è nulla di meglio di un viaggio d'istruzione.
+                            </td>
+                        </tr>
+                        <tr><td><span>Socializzazione</span></td></tr>
+                        <tr>
+                            <td>
+                                <button class="btn-round">A</button>
+                            </td>
+                            <td>
+                                Si viaggia non solo per divertirsi, ma anche per allargare i propri orizzonti: scoprire culture diverse dalla nostra (nonché la gastronomia) e aggiungere ulteriori conoscenze
+                                al nostro bagaglio. Dal punto di vista storico-culturale è giusto ricordare la Shoah: infatti a Norimberga vedremo il memoriale dei processi svoltisi negli anni 1945 e 1946
+                                (Memoriale dei Processi di Norimberga, Norimberga) e a Dachau visiteremo il tristemente famoso campo di sterminio. Dal punto di vista artistico e storico vedremo numerose costruzioni
+                                nei centri storici di Norimberga e Monaco di Baviera.
+                            </td>
+                        </tr>
+                        <tr><td><span>Cultura</span></td></tr>
+                        <tr>
+                            <td>
+                                <button class="btn-round">A</button>
+                            </td>
+                            <td>
+                                Un occhio anche all'aspetto puramente scenografico ed intrattenitivo con la visita (facoltativa) allo stadio del Bayern Monaco (nonché del Monaco 1860 e della nazionale tedesca):
+                                l'Allianz Arena.
+                            </td>
+                        </tr>
+                        <tr><td><span>Intrattenimento e divertimento</span></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
