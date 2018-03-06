@@ -16,6 +16,11 @@ var debouncedSlide = debounce(function() {
         setTimeout(function() {
             window.addEventListener("scroll", debouncedSlide);
         }, 300);
+        if (imgcurrent == imgs.length-1) {
+            setTimeout(function() {
+                imgs[imgs.length-1].children[0].style.width = "90%";
+            }, 300);
+        }
         previous = getCoords(imgs[imgcurrent]).top;
     } else {
         // console.log('up');
@@ -25,6 +30,7 @@ var debouncedSlide = debounce(function() {
         setTimeout(function() {
             window.addEventListener("scroll", debouncedSlide);
         }, 300);
+        imgs[imgs.length-1].children[0].style.width = "40%"; // FIXME ottimizza
         previous = getCoords(imgs[imgcurrent]).top;
     }
     // console.log("\"Previous\" ora è a: "+previous);
