@@ -4,36 +4,89 @@ var imgcurrent = 0;
 var counter = 0;
 var previous = window.scrollY;
 
+function setOpacity(opacityValue) {
+    for (var i = 0; i < imgs.length; i++) {
+        for (child of imgs[i].children[0].children) {
+            if (opacityValue) {
+                child.style.transitionDuration = "1s";
+            } else {
+                child.style.transitionDuration = "0s";
+            }
+            child.style.opacity = opacityValue;
+        }
+    }
+}
+
 // TODO scrolling OutOfBorder down
 var debouncedSlide = debounce(function() {
-    // console.log("Scrollato a: "+window.scrollY);
-    // console.log("Precedentemente: "+previous);
+    var scrlTime = 500;
     if (window.scrollY > previous) {
-        // console.log('down');
-        var pos = determineScrollPos(false);
-        window.removeEventListener("scroll", debouncedSlide);
-        scrollIt(pos);
-        setTimeout(function() {
-            window.addEventListener("scroll", debouncedSlide);
-        }, 300);
+        /*
+            DOWN
+            De-opacizza
+            Rimuovi scrolling e Scrolla
+            (Altro)
+            Opacizza
+            Ammetti scrolling
+        */
+        // De-opacizza
+        setOpacity(0);
+        // Rimuovi il listener
+        window.removeEventListener("scroll", debouncedSlide); // Remove listener
+        // Scrolla
+        var pos = determineScrollPos(false); // Determina pos
+        scrollIt(pos, scrlTime);
+        // (altro) & opacizza
         if (imgcurrent == imgs.length-1) {
             setTimeout(function() {
+                imgs[imgs.length-1].children[0].style.transitionDuration = "2s";
                 imgs[imgs.length-1].children[0].style.width = "90%";
-            }, 300);
+                setTimeout(function () { setOpacity(1); }, 2000);
+            }, scrlTime+100);
+        // opacizza SOLO
+        } else {
+            // Opacizza
+            setTimeout(function () { setOpacity(1); }, scrlTime+100+100+200);
         }
+        // Ammetti scrolling
+        setTimeout(function() {
+            window.addEventListener("scroll", debouncedSlide); // Add listener
+        }, scrlTime+200+100+100); // Dopo lo scroll, aggiungi il listener (ammettilo)
+
         previous = getCoords(imgs[imgcurrent]).top;
     } else {
-        // console.log('up');
-        var pos = determineScrollPos(true);
-        window.removeEventListener("scroll", debouncedSlide);
-        scrollIt(pos);
+        /*
+            UP
+            De-opacizza
+            (Altro)
+            Rimuovi scrolling e Scrolla
+            Opacizza
+            Ammetti scrolling
+        */
+        // De-opacizza
+        setOpacity(0);
+        // Rimuovi il listener
+        window.removeEventListener("scroll", debouncedSlide); // Remove listener
+        var pos = determineScrollPos(true); // Determina pos
+        // (altro) & rimuovi scrolling & scrolla
+        if (imgcurrent == imgs.length-2) {
+            imgs[imgs.length-1].children[0].style.transitionDuration = "0.2s";
+            imgs[imgs.length-1].children[0].style.width = "40%";
+            setTimeout(function() { scrollIt(pos, scrlTime); }, 200); // Scrolla
+        // rimuovi scrolling e scrolla SOLO
+        } else {
+            scrollIt(pos, scrlTime); // Scrolla
+        }
+        console.log("After scroll");
+        // Opacizza
+        setTimeout(function () { setOpacity(1); }, scrlTime+100);
+        // Ammetti scrolling
         setTimeout(function() {
-            window.addEventListener("scroll", debouncedSlide);
-        }, 300);
-        imgs[imgs.length-1].children[0].style.width = "40%"; // FIXME ottimizza
+            window.addEventListener("scroll", debouncedSlide); // Add listener
+        }, scrlTime+400); // Dopo l'opacizzazione, aggiungi il listener
+
         previous = getCoords(imgs[imgcurrent]).top;
     }
-    // console.log("\"Previous\" ora è a: "+previous);
 }, 200, true);
 
 window.addEventListener("scroll", debouncedSlide);
@@ -50,48 +103,7 @@ function logScrollDirection() {
     }
     previous = window.scrollY;
 }
-/*
-var sl = debounce(function() {
-    if (counter == 0) {
-        console.log(counter);
-        var newScrollPosition = window.scrollY;
 
-        if (newScrollPosition < lastScrollPosition){
-            console.log("Up");
-            var pos = determineScrollPos(true);
-            if (pos) {
-                scrl = setTimeout(function () {
-                    window.removeEventListener("scroll", slide);
-                    scrollIt(pos);
-                    clearTimeout(scrl);
-                    setTimeout(function () {
-                        counter = 0;
-                        window.addEventListener("scroll", slide);
-                    }, 1000);
-                }, 1000);
-            }
-        }else{
-            console.log("Down");
-            var pos = determineScrollPos(false);
-            console.log(pos);
-            if (pos) {
-                scrl = setTimeout(function () {
-                    window.removeEventListener("scroll", slide);
-                    scrollIt(pos);
-                    clearTimeout(scrl);
-                    console.log("DONEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-                    setTimeout(function () {
-                        counter = 0;
-                        window.addEventListener("scroll", slide);
-                    }, 1000);
-                }, 1000);
-            }
-        }
-        lastScrollPosition = newScrollPosition;
-        counter++;
-    }
-}, 3000);
-*/
 function determineScrollPos(isUpward) {
     if (isUpward) {
         // Direzione ^
@@ -120,45 +132,6 @@ function getCoords(elem) {
     left: box.left + pageXOffset
   };
 }
-
-/*
-// Returns a function, that, when invoked, will only be triggered at most once
-// during a given window of time. Normally, the throttled function will run
-// as much as it can, without ever going more than once per `wait` duration;
-// but if you'd like to disable the execution on the leading edge, pass
-// `{leading: false}`. To disable execution on the trailing edge, ditto.
-function throttle(func, wait, options) {
-  var context, args, result;
-  var timeout = null;
-  var previous = 0;
-  if (!options) options = {};
-  var later = function() {
-    previous = options.leading === false ? 0 : Date.now();
-    timeout = null;
-    result = func.apply(context, args);
-    if (!timeout) context = args = null;
-  };
-  return function() {
-    var now = Date.now();
-    if (!previous && options.leading === false) previous = now;
-    var remaining = wait - (now - previous);
-    context = this;
-    args = arguments;
-    if (remaining <= 0 || remaining > wait) {
-      if (timeout) {
-        clearTimeout(timeout);
-        timeout = null;
-      }
-      previous = now;
-      result = func.apply(context, args);
-      if (!timeout) context = args = null;
-    } else if (!timeout && options.trailing !== false) {
-      timeout = setTimeout(later, remaining);
-    }
-    return result;
-  };
-};
-*/
 
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for
@@ -382,23 +355,3 @@ function checkEmail(emailField) {
     }
 }
 */
-
-// window.onload = function() {
-//     // document.getElementById('main-page').style.height = window.innerHeight+"px";
-//     var links = document.getElementsByClassName('sublink');
-//     var lis = document.getElementById('sub-menulist').children;
-//     // Espandi i <li>
-//     for(var i=0; i<lis.length; i++) {
-//         lis[i].style.height = "40px";
-//     }
-//     // Rimetti i link a posto
-//     for (var i = 0; i < links.length; i++) {
-//         links[i].style.position = "absolute";
-//         links[i].style.left = "10px";
-//     }
-// }
-
-//
-// window.onresize = function() {
-//     document.getElementById('main-page').style.height = window.innerHeight+"px";
-// }
