@@ -94,11 +94,11 @@ h1 {
 }
 
 .btn-round {
-    display: block; /* Manda a capo <span> */
+    display: inline-block;
     height: 128px;
     width: 128px;
     border-radius: 50%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid white;
@@ -136,6 +136,30 @@ h1 {
 .city-summary, .city-summary td {
     border: solid 1px white;
     border-collapse: collapse;
+}
+
+#accompagnatori {
+    width: 100%;
+}
+
+#accompagnatori td {
+    width: 33.33%;
+}
+
+#accompagnatori div {
+    display: inline-block;
+    vertical-align: top;
+}
+#accompagnatori span:nth-child(1) {
+    font-size: 2em;
+}
+#accompagnatori span:nth-child(3) {
+    font-style: italic;
+    padding-left: 1em;
+}
+#accompagnatori span:nth-child(5) {
+    font-style: italic;
+    padding-left: 1em;
 }
 
 /* BEGIN */
