@@ -29,31 +29,33 @@ var debouncedSlide = debounce(function() {
             Opacizza
             Ammetti scrolling
         */
-        // De-opacizza
-        setOpacity(0);
-        // Rimuovi il listener
-        window.removeEventListener("scroll", debouncedSlide); // Remove listener
-        // Scrolla
         var pos = determineScrollPos(false); // Determina pos
-        scrollIt(pos, scrlTime);
-        // (altro) & opacizza
-        if (imgcurrent == imgs.length-1) {
+        if (pos) {
+            // De-opacizza
+            setOpacity(0);
+            // Rimuovi il listener
+            window.removeEventListener("scroll", debouncedSlide); // Remove listener
+            // Scrolla
+            scrollIt(pos, scrlTime);
+            // (altro) & opacizza
+            if (imgcurrent == imgs.length-1) {
+                setTimeout(function() {
+                    imgs[imgs.length-1].children[0].style.transitionDuration = "2s";
+                    imgs[imgs.length-1].children[0].style.width = "90%";
+                    setTimeout(function () { setOpacity(1); }, 2000);
+                }, scrlTime+100);
+                // opacizza SOLO
+            } else {
+                // Opacizza
+                setTimeout(function () { setOpacity(1); }, scrlTime+400);
+            }
+            // Ammetti scrolling
             setTimeout(function() {
-                imgs[imgs.length-1].children[0].style.transitionDuration = "2s";
-                imgs[imgs.length-1].children[0].style.width = "90%";
-                setTimeout(function () { setOpacity(1); }, 2000);
-            }, scrlTime+100);
-        // opacizza SOLO
-        } else {
-            // Opacizza
-            setTimeout(function () { setOpacity(1); }, scrlTime+100+100+200);
-        }
-        // Ammetti scrolling
-        setTimeout(function() {
-            window.addEventListener("scroll", debouncedSlide); // Add listener
-        }, scrlTime+200+100+100); // Dopo lo scroll, aggiungi il listener (ammettilo)
+                window.addEventListener("scroll", debouncedSlide); // Add listener
+            }, scrlTime+600); // Dopo lo scroll, aggiungi il listener (ammettilo)
 
-        previous = getCoords(imgs[imgcurrent]).top;
+            previous = getCoords(imgs[imgcurrent]).top;
+        }
     } else {
         /*
             UP
@@ -63,29 +65,30 @@ var debouncedSlide = debounce(function() {
             Opacizza
             Ammetti scrolling
         */
-        // De-opacizza
-        setOpacity(0);
-        // Rimuovi il listener
-        window.removeEventListener("scroll", debouncedSlide); // Remove listener
         var pos = determineScrollPos(true); // Determina pos
-        // (altro) & rimuovi scrolling & scrolla
-        if (imgcurrent == imgs.length-2) {
-            imgs[imgs.length-1].children[0].style.transitionDuration = "0.2s";
-            imgs[imgs.length-1].children[0].style.width = "40%";
-            setTimeout(function() { scrollIt(pos, scrlTime); }, 200); // Scrolla
-        // rimuovi scrolling e scrolla SOLO
-        } else {
-            scrollIt(pos, scrlTime); // Scrolla
-        }
-        console.log("After scroll");
-        // Opacizza
-        setTimeout(function () { setOpacity(1); }, scrlTime+100);
-        // Ammetti scrolling
-        setTimeout(function() {
-            window.addEventListener("scroll", debouncedSlide); // Add listener
-        }, scrlTime+400); // Dopo l'opacizzazione, aggiungi il listener
+        if (pos || pos == 0) {
+            // De-opacizza
+            setOpacity(0);
+            // Rimuovi il listener
+            window.removeEventListener("scroll", debouncedSlide); // Remove listener
+            // (altro) & rimuovi scrolling & scrolla
+            if (imgcurrent == imgs.length-2) {
+                imgs[imgs.length-1].children[0].style.transitionDuration = "0.2s";
+                imgs[imgs.length-1].children[0].style.width = "40%";
+                setTimeout(function() { scrollIt(pos, scrlTime); }, 200); // Scrolla
+                // rimuovi scrolling e scrolla SOLO
+            } else {
+                scrollIt(pos, scrlTime); // Scrolla
+            }
+            // Opacizza
+            setTimeout(function () { setOpacity(1); }, scrlTime+100);
+            // Ammetti scrolling
+            setTimeout(function() {
+                window.addEventListener("scroll", debouncedSlide); // Add listener
+            }, scrlTime+400); // Dopo l'opacizzazione, aggiungi il listener
 
-        previous = getCoords(imgs[imgcurrent]).top;
+            previous = getCoords(imgs[imgcurrent]).top;
+        }
     }
 }, 200, true);
 
