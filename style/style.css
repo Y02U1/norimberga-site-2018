@@ -83,20 +83,25 @@ body {
     opacity: 1;
 }
 
+h3 {
+    font-size: 1em;
+}
+
 h2 {
     margin-top: 0;
-    padding-top: 5%;
+    padding-top: 20px;
+    font-size: 1.5em;
 }
 
 h1 {
     margin-top: 0px;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 .btn-round {
     display: inline-block;
-    height: 128px;
-    width: 128px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     /* margin: 0 auto; */
 
@@ -109,7 +114,7 @@ h1 {
 .buttons-intro td:nth-child(1){
     text-align: center;
     font-style: italic;
-    font-size: 1.7em;
+    font-size: 1.3em;
 }
 
 .buttons-intro td:nth-child(2){
@@ -140,6 +145,7 @@ h1 {
 
 #accompagnatori {
     width: 100%;
+    position: absolute;
 }
 
 #accompagnatori td {
@@ -151,7 +157,7 @@ h1 {
     vertical-align: top;
 }
 #accompagnatori span:nth-child(1) {
-    font-size: 2em;
+    font-size: 1.7em;
 }
 #accompagnatori span:nth-child(3) {
     font-style: italic;
