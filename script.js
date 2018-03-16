@@ -17,7 +17,6 @@ function setOpacity(opacityValue) {
     }
 }
 
-// TODO scrolling OutOfBorder down
 var debouncedSlide = debounce(function() {
     var scrlTime = 500;
     if (window.scrollY > previous) {
