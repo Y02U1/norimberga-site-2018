@@ -290,70 +290,51 @@ function collapseSubmenu() {
         }
     }
 }
-/*
+
 function checkEmail(emailField) {
+    isGood = true;
     posAt = emailField.value.indexOf("@");
     posDot = emailField.value.lastIndexOf(".");
     if (emailField.value == "") {
-        document.getElementById('mail-info').style.height = "0px";
+        document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Il campo non può essere vuoto";
+        isGood = false;
     } else {
-        document.getElementById('mail-info').style.height = "60px";
+        // IF NOT .
+        if (posDot == -1) {
+            document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Ci dev'essere almeno un .";
+            isGood = false;
+            // ELSE esegui i controlli
+        } else {
+            if (emailField.value.length-1==posDot) {
+                document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Non ci sono caratteri dopo il .";
+                isGood = false;
+            }
+        }
         // IF esiste la @
         if(posAt != -1) {
-            document.getElementById('no@').style.display = 'none';
             // Controlla +2 @
             if (posAt != emailField.value.lastIndexOf("@")) {
-                document.getElementById('more@').style.display = "list-item";
-                document.getElementById('before@').style.display = "none";
-                document.getElementById('between@.').style.display = "none";
+                document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> C'è più di 1 @";
+                isGood = false;
             } else {
-                document.getElementById('more@').style.display = "none";
                 if(posAt < 1) {
-                    document.getElementById('before@').style.display = "list-item";
-                } else {
-                    document.getElementById('before@').style.display = "none";
+                    document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Non ci sono caratteri prima di @";
+                    isGood = false;
                 }
                 if (posDot != -1) {
                     if (posDot-posAt < 2) {
-                        document.getElementById('between@.').style.display = "list-item";
-                    } else {
-                        document.getElementById('between@.').style.display = "none";
+                        document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Non ci sono caratteri tra @ e .";
+                        isGood = false;
                     }
                 }
             }
         // ELSE informa mancanza @
         } else {
-            document.getElementById('no@').style.display = "list-item";
-            document.getElementById('before@').style.display = "none";
-            document.getElementById('between@.').style.display = "none";
-            document.getElementById('more@').style.display = "none";
+            document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Non c'è una @";
+            isGood = false;
         }
-        // IF NOT .
-        if (posDot == -1) {
-            document.getElementById('no.').style.display = "list-item";
-            document.getElementById('after.').style.display = "none";
-            document.getElementById('between@.').style.display = "none";
-        // ELSE esegui i controlli
-        } else {
-            document.getElementById('no.').style.display = "none";
-            if (emailField.value.length-1==posDot) {
-                document.getElementById('after.').style.display = "list-item";
-            } else {
-                document.getElementById('after.').style.display = "none";
-            }
-        }
-        if (document.getElementById('no@').style.display == 'none' &&
-            document.getElementById('before@').style.display == 'none' &&
-            document.getElementById('between@.').style.display == 'none' &&
-            document.getElementById('more@').style.display == 'none' &&
-            document.getElementById('no.').style.display == 'none' &&
-            document.getElementById('after.').style.display == 'none') {
-            document.getElementById('validated').style.display = 'list-item';
-            document.getElementById('mail-info').style.backgroundColor = 'rgb(10, 191, 82)';
-        } else {
-            document.getElementById('validated').style.display = 'none';
-            document.getElementById('mail-info').style.backgroundColor = 'rgb(230, 78, 78)';
+        if (isGood) {
+            document.getElementById('mail-popup').innerHTML = "<i class='icon-tick'></i> Indirizzo e-mail verificato";
         }
     }
 }
-*/

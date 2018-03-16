@@ -289,9 +289,7 @@
             <div class="img img8">
                 <div>
                     <h2>Contattaci!</h2>
-                    <p>
-                        Questi sono i docenti accompagnatori.
-                    </p>
+                    <p>Questi sono i docenti accompagnatori.</p>
                     <!-- FIXME all'aprire il menu in parte, alcuni contatti si nascondono -->
                     <table id="accompagnatori">
                         <tr>
@@ -340,13 +338,21 @@
                             <td>
                                 <button class="btn-round"></button>
                                 <div>
-                                    <span>Patrizia Di Pietro</span><br />
-                                    <span>3BG</span><br />
+                                    <span>Virgilio Santoli</span><br />
+                                    <span>3ME</span><br />
                                     <span>3313507137</span>
                                 </div>
                             </td>
                         </tr>
                         <tr>
+                            <td>
+                                <button class="btn-round"></button>
+                                <div>
+                                    <span>Patrizia Di Pietro</span><br />
+                                    <span>3BG</span><br />
+                                    <span>3313507137</span>
+                                </div>
+                            </td>
                             <td>
                                 <button class="btn-round"></button>
                                 <div>
@@ -363,16 +369,22 @@
                                     <span>3313507137</span>
                                 </div>
                             </td>
-                            <td>
-                                <button class="btn-round"></button>
-                                <div>
-                                    <span>Virgilio Santoli</span><br />
-                                    <span>3ME</span><br />
-                                    <span>3313507137</span>
-                                </div>
-                            </td>
                         </tr>
                     </table>
+                    <div id="mail">
+                        <h3>Manca qualcosa?</h3>
+                        <p>
+                            Ti serve sapere altro? Mandami una mail. Basta compilare i campi sottostanti e premere il bottone, quando hai finito.<br />
+                            Non ti preoccupare di eventuali errori: verrai informato di cosa correggere e come.
+                        </p>
+                        <form>
+                            <input id="nome" placeholder="Tuo nome e cognome"/>
+                            <input id="mittente" placeholder="Tuo indirizzo e-mail" onkeyup="checkEmail(this);"/>
+                            <span id="mail-popup"><i class="icon-cross-slim"></i> Il campo non può essere vuoto</span>
+                            <input id="oggetto" placeholder="Oggetto della mail"/>
+                            <textarea placeholder="Scrivi qua il corpo della mail..."></textarea>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
