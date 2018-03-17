@@ -3,10 +3,13 @@ var imgs = document.getElementsByClassName('img'); // Array
 var imgcurrent = 0;
 var counter = 0;
 var previous = window.scrollY;
+var sublinks = document.getElementsByClassName('sublink');
 
-document.getElementsByClassName('sublink').addEventListener("click", function (event) {
-    event.stopImmediatePropagation();
-});
+for (var i = 0; i < sublinks.length; i++) {
+    sublinks[i].addEventListener("click", function (event) {
+        event.stopImmediatePropagation();
+    })
+}
 
 function setOpacity(opacityValue) {
     for (var i = 0; i < imgs.length; i++) {

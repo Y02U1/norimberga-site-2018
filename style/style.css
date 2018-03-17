@@ -1,4 +1,8 @@
-html, body {
+html {
+    height: 100%;
+}
+
+html#slide, body {
     margin: 0px;
     height: 800%;
     overflow-x: hidden;
@@ -402,4 +406,16 @@ li > a {
 #collapse-menu {
     padding: 10px;
     cursor: pointer;
+}
+
+/* PAGE: gallery.html */
+
+#bg-gallery {
+    background-image: linear-gradient(
+      rgba(56, 0, 0, 0.85),
+      rgba(56, 0, 0, 0.85)
+    ),url("../images/bg-contact.jpg");
+    width: 100%;
+    flex: 1;
+    background-size: cover;
 }
