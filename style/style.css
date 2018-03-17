@@ -164,8 +164,7 @@ td {
     vertical-align: top;
 }
 #accompagnatori .btn-round {
-    background-image: url("../images/user-white.png");
-    background-size: contain;
+    font-size: 4em;
 }
 #accompagnatori span:nth-child(1) {
     font-size: 1.7em;
