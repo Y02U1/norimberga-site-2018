@@ -389,6 +389,9 @@ li > a {
     border-color: transparent rgb(108, 255, 136) transparent transparent;
 }
 
+.tooltip-trigger { overflow: hidden; }
+.tooltip-trigger:hover { overflow: visible;; }
+
 .sublink {
     transition: left 0.5s;
     transition-timing-function: ease-in;
