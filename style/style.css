@@ -331,7 +331,7 @@ li.submenu-el {
 }
 
 li > a {
-    color: rgb(167, 167, 167);
+    color: white;
     text-decoration: none;
     display: inline-block;
     padding-left: 5%;
@@ -390,7 +390,7 @@ li > a {
 }
 
 .tooltip-trigger { overflow: hidden; }
-.tooltip-trigger:hover { overflow: visible;; }
+.tooltip-trigger:hover { overflow: visible; }
 
 .sublink {
     transition: left 0.5s;
