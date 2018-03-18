@@ -279,7 +279,7 @@ function collapseSubmenu() {
         // Sposta i link a SX
         for (var i = 0; i < links.length; i++) {
             links[i].style.position = "absolute";
-            links[i].style.left = "-100%";
+            links[i].style.left = "-300px";
         }
         // Chiudi i <li>
         for(var i=0; i<lis.length; i++) {
