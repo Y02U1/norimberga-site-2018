@@ -418,4 +418,22 @@ li > a {
     width: 100%;
     flex: 1;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: column;
+}
+
+.gallery-row {
+    display: flex;
+    width: 100%;
+}
+
+.gallery-row img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.gallery-row > div {
+    border: 30px solid transparent;
 }
