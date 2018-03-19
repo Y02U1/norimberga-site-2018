@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'ir-icons';
-  src:  url('fonts/ir-icons.eot?kv18mr');
-  src:  url('fonts/ir-icons.eot?kv18mr#iefix') format('embedded-opentype'),
-    url('fonts/ir-icons.ttf?kv18mr') format('truetype'),
-    url('fonts/ir-icons.woff?kv18mr') format('woff'),
-    url('fonts/ir-icons.svg?kv18mr#ir-icons') format('svg');
+  src:  url('fonts/ir-icons.eot?uu0omj');
+  src:  url('fonts/ir-icons.eot?uu0omj#iefix') format('embedded-opentype'),
+    url('fonts/ir-icons.ttf?uu0omj') format('truetype'),
+    url('fonts/ir-icons.woff?uu0omj') format('woff'),
+    url('fonts/ir-icons.svg?uu0omj#ir-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,24 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-alarm-clock:before {
+  content: "\e914";
+}
+.icon-baggage:before {
+  content: "\e915";
+}
+.icon-bed:before {
+  content: "\e916";
+}
+.icon-diamond:before {
+  content: "\e917";
+}
+.icon-dinner:before {
+  content: "\e918";
+}
+.icon-sandwich:before {
+  content: "\e919";
+}
 .icon-auto:before {
   content: "\e900";
 }
