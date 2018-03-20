@@ -141,6 +141,16 @@ h1 {
     color: white;
 }
 
+@keyframes blink {
+    0% {color: white;}
+    50% {color: transparent;}
+    100% {color: white;}
+}
+
+.btn-round:hover {
+    animation: blink 0.8s infinite;
+}
+
 @media only screen and (max-height: 1366px) {
     .btn-round {
         height: 64px;
@@ -471,9 +481,35 @@ li > a {
     height: 95%;
     width: 95%;
 }
-
 .gallery-row > div {
+    position: relative;
     border: 20px solid transparent;
+}
+.gallery-row > div > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-57%, -57%);
+    background-color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 8px;
+    text-transform: uppercase;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+.gallery-row > div:hover > span {
+    opacity: 1;
+}
+
+@media only screen and (max-height: 1366px) {
+    .gallery-row img {
+        height: 90%;
+        width: 90%;
+    }
+    .gallery-row > div {
+        border: 10px solid transparent;
+    }
 }
 
 /* PAGE: day1.html */
