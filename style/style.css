@@ -30,13 +30,13 @@ h1 {
     font-size: 2em;
 }
 
-@media only screen and (max-height: 1366px) {
+@media only screen and (max-width: 1366px) {
     .img > div > * {
         font-size: 0.8em;
     }
 }
 
-@media only screen and (max-height: 1366px) {
+@media only screen and (max-width: 1366px) {
     h1 {
         font-size: 1.5em !important;
     }
@@ -64,7 +64,7 @@ h1 {
     font-size: 1em;
 }
 
-@media only screen and (max-height: 1366px) {
+@media only screen and (max-width: 1366px) {
     #side-menu {
         font-size: 0.7em;
     }
@@ -151,7 +151,7 @@ h1 {
     animation: blink 0.8s infinite;
 }
 
-@media only screen and (max-height: 1366px) {
+@media only screen and (max-width: 1366px) {
     .btn-round {
         height: 64px;
         width: 64px;
@@ -218,7 +218,7 @@ td {
     font-style: italic;
     padding-left: 1em;
 }
-@media only screen and (max-height: 1366px) {
+@media only screen and (max-width: 1366px) {
     #accompagnatori .btn-round {
         font-size: 3em;
     }
@@ -502,7 +502,7 @@ li > a {
     opacity: 1;
 }
 
-@media only screen and (max-height: 1366px) {
+@media only screen and (max-height: 768px) {
     .gallery-row img {
         height: 90%;
         width: 90%;
