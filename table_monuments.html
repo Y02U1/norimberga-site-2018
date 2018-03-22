@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Example</title>
+        <link rel="stylesheet" type="text/css" href="style/style.css" />
+        <link rel="stylesheet" type="text/css" href="style/font-ivan.css" />
+    </head>
+    <body>
+        <div id="side-menu">
+			<ul>
+				<li id="collapse-menu" class="menu-el" onclick="collapseMenu();"><i class="icon-leftarrow"></i>&nbsp;Nascondi&nbsp;menu</li>
+				<li id="side-menu-title">Monaco&nbsp;di&nbsp;Baviera<br />Norimberga<br />A.S.&nbsp;2017-2018</li>
+				<li class="menu-el"><a href="index.html">Home</a></li>
+				<li id="father" onclick="collapseSubmenu();" class="menu-el"><i class="icon-downarrow"></i>&nbsp;Elenco&nbsp;giorni
+					<ul id="sub-menulist">
+						<li class="menu-el submenu-el tooltip-trigger" id="btn1">
+							<a class="sublink" href="days/day1.html">Luned&igrave;</a>
+							<span class="tooltip">
+								<b>Giorno 1 - Viaggio di andata (tappa a Wattens, AUT)</b><br />
+								<ul>
+									<li>Museo Swarovski Crystal Worlds</li>
+								</ul>
+							</span>
+						</li>
+						<li class="menu-el submenu-el tooltip-trigger" id="btn2">
+							<a class="sublink" href="days/day2.html">Marted&igrave;</a>
+							<span class="tooltip">
+								<b>Giorno 2 - Norimberga (DE)</b><br />
+								<ul>
+									<li>Faber-Castell</li>
+									<li>Museo Nazionale Germanico</li>
+								</ul>
+							</span>
+						</li>
+						<li class="menu-el submenu-el tooltip-trigger" id="btn3">
+							<a class="sublink" href="days/day3.html">Mercoled&igrave;</a>
+							<span class="tooltip">
+								<b>Giorno 3 - Norimberga (DE)</b><br />
+								<ul>
+									<li>Piazza del mercato e Schonen Brunnen</li>
+									<li>Frauenkirche</li>
+									<li>Cattedrale di S. Sebaldo</li>
+									<li>Memoriale dei Processi di Norimberga</li>
+								</ul>
+							</span>
+						</li>
+						<li class="menu-el submenu-el tooltip-trigger" id="btn4">
+							<a class="sublink" href="days/day4.html">Gioved&igrave;</a>
+							<span class="tooltip">
+								<b>Giorno 4 - Monaco di Baviera (DE)</b><br />
+								<ul>
+									<li>Allianz Arena (facoltativo)</li>
+									<li>Deutches Museum</li>
+								</ul>
+							</span>
+						</li>
+						<li class="menu-el submenu-el tooltip-trigger" id="btn5">
+							<a class="sublink" href="days/day5.html">Venerd&igrave;</a>
+							<span class="tooltip">
+								<b>Giorno 5 - Monaco di Baviera (DE)</b><br />
+								<ul>
+									<li>Museo BMW e BMW Welt</li>
+									<li>Residenz</li>
+									<li>Teatro Cuvilliès</li>
+								</ul>
+							</span>
+						</li>
+						<li class="menu-el submenu-el tooltip-trigger" id="btn6">
+							<a class="sublink" href="days/day6.html">Sabato</a>
+							<span class="tooltip">
+								<b>Giorno 6 - Viaggio di ritorno (tappa a Dachau e Innsbruck, DE e AUT)</b><br />
+								<ul>
+									<li>Campo di sterminio di Dachau</li>
+									<li>Centro storico di Innsbruck</li>
+								</ul>
+							</span>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-el"><a href="download.html">Download</a></li>
+				<li class="menu-el"><a href="maps.html">Mappe</a></li>
+				<li class="menu-el"><a href="table_monuments.html">Monumenti</a></li>
+				<li class="menu-el"><a href="services.html">Agenzia</a></li>
+				<li class="menu-el"><a href="gallery.html">Galleria</a></li>
+			</ul>
+		</div>
+        <div id="circle">
+            <div id="right-circle">
+                <i onclick="openMenu();" class="icon-rightarrow open-menu"></i>
+            </div>
+        </div>
+        <div id="fullpage" class="bg-table">
+            <div class="place" id="detail-swarovski">
+                <h2>Swarovski Kristallwelten</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Kristallweltenstraße 1, 6112 Wattens<br />47.293782, 11.600776</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>dalle 8.30 alle 19.30 (ultimo ingresso alle 18.30)</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>Prezzo 7€ con gruppi di almeno 10 persone</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-telephone"></i></td><td>+43 5224 51080</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="https://kristallwelten.swarovski.com">https://kristallwelten.swarovski.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-mail-close"></i></td><td>swarovski.kristallwelten@swarovski.com</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-faber-castell">
+                <h2>Faber-Castell</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Nürnberger Str. 2, 90547 Stein<br />49.417406, 11.021234</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>Venerdi, dalle 15 alle 17</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>2€ a studente</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="http://www.faber-castell.it/">http://www.faber-castell.it/</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-mail-close"></i></td><td>faber-castell@faber-castell.it</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-nationalmuseum">
+                <h2>Museo Nazionale Germanico</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Kartäusergasse 1, 90402 Nürnberg, Germania</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>10:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>1€</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-telephone"></i></td><td>+49 911 / 2336-0</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="https://www.gnm.de/">https://www.gnm.de/</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-hauptmarkt">
+                <h2>Piazza del mercato</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Hauptmarkt, Nürnberg, Germania</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-lorenzkirche">
+                <h2>Chiesa di San Lorenzo</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Lorenzer Platz 1</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-nazi-party">
+                <h2>Memoriale dei processi di Norimberga</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Bärenschanzstraße 72 90429 Nürnberg</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>09:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>4€</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-telephone"></i></td><td>49 (0)911 32179372</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="https://www.museen.nuernberg.de/memorium-nuernberger-prozesse/">https://www.museen.nuernberg.de/memorium-nuernberger-prozesse/</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-allianz">
+                <h2>Allianz Arena</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Werner-Heisenberg-Allee 25, 80939 München, Germania<br />48.13076, 11.7295</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>10:00 am - 7:00 pm</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>10€</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-telephone"></i></td><td>+49 89 69931222</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="https://allianz-arena.com/de">https://allianz-arena.com/de</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-deutsches-museum">
+                <h2>Deutsches Museum</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Museumsinsel 1, 80538 München<br />48.130000, 11.583333</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>Tutti i giorni dalle 9 alle 17</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>4€ ciascuno</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="https://www.deutsches-museum.de">https://www.deutsches-museum.de</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-bmw-welt">
+                <h2>BMW Welt</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Am Olympiapark 1, 80809 München<br />48.177177, 11.556275</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>lunedì-sabato ore 7.30 - 24.00 (alcuni reparti chiudono prima)</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>Gratuito</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-telephone"></i></td><td>Fax: +49 (0)89 1250 160 09</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="https://www.bmw-welt.com">https://www.bmw-welt.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-mail-close"></i></td><td>infowelt@bmw-welt.com</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-bmw-museum">
+                <h2>BMW Museum</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Am Olympiapark 2, 80809 München<br />48.176839, 11.559087</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>martedi-domenica 10 - 18</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>9,00 € ciascuno</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-telephone"></i></td><td>Fax: +49 (0)89 1250 160 09</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="https://www.bmw-welt.com">https://www.bmw-welt.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-mail-close"></i></td><td>infowelt@bmw-welt.com</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-residenz">
+                <h2>Residenz</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Residenzstraße 1, 80333 München, Germania</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>9:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>13€  con Teatro Cuvilliès</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-telephone"></i></td><td>+49 89 290671</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="http://www.residenz-muenchen.de/">http://www.residenz-muenchen.de/</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-cuvillies">
+                <h2>Teatro Cuvilliès</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Residenzstraße 1, 80539 München, Germania</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>14:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>13€ con Palazzo reale</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-telephone"></i></td><td>+49 89 21851940</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="https://www.residenztheater.de/">https://www.residenztheater.de/</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="place" id="detail-dachau">
+                <h2>Campo di sterminio di Dachau</h2>
+                <table>
+                    <tr>
+                        <td><i class="icon-map"></i></td><td>Pater-Roth-Str. 2a - 85221 Dachau<br />48.270136, 11.468271</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-clock"></i></td><td>tutti i giorni dalle 9:00 alle 17:00</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-money"></i></td><td>Gratuito</td>
+                    </tr>
+                    <tr>
+                        <td><i class="icon-web"></i></td><td><a href="http://www.kz-gedenkstaette-dachau.de/">http://www.kz-gedenkstaette-dachau.de/</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>

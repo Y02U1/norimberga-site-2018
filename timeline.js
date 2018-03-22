@@ -1,6 +1,17 @@
+day = 0;
+
 // Quando si carica la pagina, calcola la timeline
 window.onload = function() {
+    leftArrows = document.getElementsByClassName('icon-leftarrow');
+    rightArrows = document.getElementsByClassName('icon-rightarrow');
+    for (arrow of leftArrows) {
+        arrow.addEventListener("click", changeDay);
+    }
+    for (arrow of rightArrows) {
+        arrow.addEventListener("click", changeDay);
+    }
     calcTimeline();
+    checkArrows();
 };
 
 // Sul ridimensionamento della finestra, ricalcola la timeline
@@ -17,7 +28,8 @@ function calcTimeline() {
             - posBegin: posizione in pixel di partenza
             - posEnd: posizione in pixel di arrivo
     */
-    eventTags = document.getElementsByClassName('event');
+    actTl = document.getElementById('timeline-active');
+    eventTags = actTl.getElementsByClassName('event-bubble');
     hourBegin = Number(eventTags[0].getAttribute('data-begin'));
     hourEnd = Number(eventTags[eventTags.length-1].getAttribute('data-end'));
     posBegin = Math.floor(getCoords(eventTags[0]).left);
@@ -30,7 +42,7 @@ function calcTimeline() {
             - refWidth = larghezza dell'evento d'inizio e fine (di riferimento)
     */
     tlTotalWidth = posEnd - posBegin;
-    refWidth = eventTags[0].offsetWidth
+    refWidth = eventTags[0].offsetWidth;
     tlEffWidth = tlTotalWidth - refWidth;
     /*
         Opera su tutti gli elementi (eventi) della timeline
@@ -56,9 +68,67 @@ function calcTimeline() {
             // distanza in % sulla lunghezza totale della linea : lunghezza totale %
             //                                      =
             // distanza in px sulla linea + metà evento iniziale + metà lunghezza della bolla : lunghezza totale px
-            distPerc = (refWidth/2+distPx+parseInt(item.style.width,10)/2) * 80 / tlTotalWidth;
+            distPerc = (refWidth/2+distPx+parseInt(item.style.width,10)/2) * 90 / tlTotalWidth;
             // Aggiungi 10 (lo spazio dalla SX della timeline) e '%'
-            item.style.left = (distPerc+10)+"%";
+            item.style.left = (distPerc+5)+"%";
         }
     }
+}
+
+function checkArrows() {
+    allTl = document.getElementsByClassName('timeline-container');
+    activeTl = document.getElementById('timeline-active');
+    leftArrow = activeTl.getElementsByClassName('icon-leftarrow')[0];
+    rightArrow = activeTl.getElementsByClassName('icon-rightarrow')[0];
+    // Nascondi la freccia di SX
+    if (activeTl == allTl[0]) {
+        leftArrow.style.display = "none";
+    } else {
+        leftArrow.style.display = "inline";
+    }
+    // Nascondi la freccia di DX
+    if (activeTl == allTl[allTl.length-1]) {
+        rightArrow.style.display = "none";
+    } else {
+        rightArrow.style.display = "inline";
+    }
+}
+
+function changeDay() {
+    activeTl = document.getElementById('timeline-active');
+    if (this.classList.contains('icon-leftarrow')) {
+        // SINISTRA SX
+        allTl = document.getElementsByClassName('timeline-container');
+        var i;
+        for (i = 0; i < allTl.length; i++) {
+            if (allTl[i] == activeTl) {
+                break;
+            }
+        }
+        nearTl = allTl[i-1];
+        activeTl.style.left = "200%";
+        activeTl.style.position = "absolute";
+        activeTl.removeAttribute("id");
+        nearTl.style.left = "0";
+        nearTl.style.position = "relative";
+        nearTl.setAttribute("id","timeline-active");
+    } else if (this.classList.contains('icon-rightarrow')) {
+        // DESTRA DX
+        allTl = document.getElementsByClassName('timeline-container');
+        var i;
+        for (i = 0; i < allTl.length; i++) {
+            if (allTl[i] == activeTl) {
+                break;
+            }
+        }
+        nearTl = allTl[i+1];
+        activeTl.style.left = "-200%";
+        activeTl.style.position = "absolute";
+        activeTl.removeAttribute("id");
+        nearTl.style.left = "0";
+        nearTl.style.position = "relative";
+        nearTl.setAttribute("id","timeline-active");
+    }
+    calcTimeline();
+    checkArrows();
 }
