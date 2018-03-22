@@ -2,13 +2,10 @@ day = 0;
 
 // Quando si carica la pagina, calcola la timeline
 window.onload = function() {
-    leftArrows = document.getElementsByClassName('icon-leftarrow');
-    rightArrows = document.getElementsByClassName('icon-rightarrow');
-    for (arrow of leftArrows) {
-        arrow.addEventListener("click", changeDay);
-    }
-    for (arrow of rightArrows) {
-        arrow.addEventListener("click", changeDay);
+    tls = document.getElementsByClassName('timeline-container');
+    for (tl of tls) {
+        tl.getElementsByClassName('icon-leftarrow')[0].addEventListener("click", changeDay);
+        tl.getElementsByClassName('icon-rightarrow')[0].addEventListener("click", changeDay);
     }
     calcTimeline();
     checkArrows();
