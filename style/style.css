@@ -608,7 +608,7 @@ li > a {
     text-align: center;
     margin: 0;
     left: 200%;
-    transition: left 2s;
+    transition: left 1s;
     top: 50%;
 }
 
@@ -690,6 +690,8 @@ li > a {
 .up .box > h3 { margin-top: 0; }
 .down .box > p { margin-bottom: 0; }
 .up .box > p { margin-bottom: 50px; }
+.end .box > p { margin-bottom: 80px; }
+.end .box > h3 { margin-top: 60px; }
 
 .down .box { top: 105%; }
 .up .box { bottom: 125%; }

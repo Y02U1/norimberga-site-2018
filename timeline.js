@@ -114,7 +114,7 @@ function changeDay() {
         nearTl.setAttribute("id","timeline-active");
         setTimeout(() => {
             activeTl.getElementsByTagName('h1')[0].style.opacity = '1';
-        }, 2000);
+        }, 1000);
     } else if (this.classList.contains('icon-rightarrow')) {
         // DESTRA DX
         allTl = document.getElementsByClassName('timeline-container');
@@ -134,7 +134,7 @@ function changeDay() {
         nearTl.setAttribute("id","timeline-active");
         setTimeout(() => {
             activeTl.getElementsByTagName('h1')[0].style.opacity = '1';
-        }, 2000);
+        }, 1000);
     }
     calcTimeline();
     checkArrows();
