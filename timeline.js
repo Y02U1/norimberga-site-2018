@@ -2,6 +2,7 @@ day = 0;
 
 // Quando si carica la pagina, calcola la timeline
 window.onload = function() {
+    boxResizing();
     tls = document.getElementsByClassName('timeline-container');
     for (tl of tls) {
         tl.getElementsByClassName('icon-leftarrow')[0].addEventListener("click", changeDay);
@@ -106,9 +107,14 @@ function changeDay() {
         activeTl.style.left = "200%";
         activeTl.style.position = "absolute";
         activeTl.removeAttribute("id");
+        for (tag of document.getElementsByTagName('h1')) {
+            tag.style.opacity = '0';
+        }
         nearTl.style.left = "0";
-        nearTl.style.position = "relative";
         nearTl.setAttribute("id","timeline-active");
+        setTimeout(() => {
+            activeTl.getElementsByTagName('h1')[0].style.opacity = '1';
+        }, 2000);
     } else if (this.classList.contains('icon-rightarrow')) {
         // DESTRA DX
         allTl = document.getElementsByClassName('timeline-container');
@@ -120,12 +126,23 @@ function changeDay() {
         }
         nearTl = allTl[i+1];
         activeTl.style.left = "-200%";
-        activeTl.style.position = "absolute";
         activeTl.removeAttribute("id");
+        for (tag of document.getElementsByTagName('h1')) {
+            tag.style.opacity = '0';
+        }
         nearTl.style.left = "0";
-        nearTl.style.position = "relative";
         nearTl.setAttribute("id","timeline-active");
+        setTimeout(() => {
+            activeTl.getElementsByTagName('h1')[0].style.opacity = '1';
+        }, 2000);
     }
     calcTimeline();
     checkArrows();
+}
+
+function boxResizing() {
+    for (box of document.getElementsByClassName('box')) {
+        console.log(box);
+        console.log(box.getBoundingClientRect().left);
+    }
 }
