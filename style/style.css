@@ -517,7 +517,7 @@ li > a {
 
 /* PAGE: day1.html */
 
-.bg-day1 {
+.bg-days {
     background-image: linear-gradient(
       rgba(56, 0, 0, 0.85),
       rgba(56, 0, 0, 0.85)
@@ -525,81 +525,6 @@ li > a {
     background-size: cover;
     flex-direction: row !important;
 }
-
-/* #timeline {
-    margin: auto;
-    background-color: white;
-    height: 3px;
-    width: 90%;
-    position: relative;
-}
-
-#timeline span {
-    background-color: white;
-    position: absolute;
-    top: -1000%;
-    border-radius: 50%;
-    padding: 1%;
-    text-transform: uppercase;
-    font-size: 1.5em;
-}
-
-#timeline span:nth-child(2) { left: 91%; }
-
-.timeline-event {
-    background-color: rgb(99, 244, 144);
-    padding: 1%;
-    border-radius: 10%;
-    max-width: 20%;
-}
-
-#timeline-top-events {
-    position: relative;
-    flex: 50;
-    flex-grow: 2;
-}
-#timeline-wrapper {
-    flex: 0;
-    flex-grow: 0;
-}
-#timeline-bottom-events {
-    flex: 50;
-    flex-grow: 1;
-}
-#timeline-top-events > * {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 2%;
-}
-#timeline-bottom-events > * {
-    margin-top: 2%;
-}
-.middle {
-    position: absolute;
-    left: 50%;
-}
-.middle::before {
-    content: " ";
-    position: absolute;
-    top: 100%;
-    left: 20%;
-    margin-left: -50px;
-    border-width: 1em;
-    border-style: solid;
-    border-color: rgb(99, 244, 144) transparent transparent transparent;
-}
-.middle::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #FF9F55;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-} */
 
 .timeline-container {
     width: 100%;
@@ -618,7 +543,7 @@ li > a {
     top: 50%;
 }
 
-.bg-day1 h1 {
+.bg-days h1 {
     color: white;
     position: absolute;
     left: 50%;
@@ -627,7 +552,7 @@ li > a {
     transition: opacity 0.1s;
     transform: translate(-50%,-50%);
 }
-.bg-day1 h1 span {
+.bg-days h1 span {
     min-width: 420px;
     display: inline-block;
 }
@@ -764,3 +689,123 @@ li > a {
 #detail-residenz { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/residenz.jpg"); }
 #detail-cuvillies { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/gallery-2.jpg"); }
 #detail-dachau { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/gallery-5.jpg"); }
+
+/* services.html */
+
+.bg-services {
+    background-image: linear-gradient(
+      rgba(56, 0, 0, 0.85),
+      rgba(56, 0, 0, 0.85)
+    ),url("../images/bg-contact.jpg");
+    background-size: cover;
+    color: white;
+}
+
+.bg-services h2 {
+    font-size: 2em;
+    padding: 1em 0 0 1em;
+}
+
+.bg-services p {
+    font-size: 1.5em;
+    padding: 0 0 0 2.5em;
+}
+
+.bg-services img {
+    float: right;
+    margin-right: 100px;
+}
+.bg-services a {
+    color: white;
+}
+
+/* maps.html */
+
+.bg-maps {
+    background-image: linear-gradient(
+      rgba(56, 0, 0, 0.85),
+      rgba(56, 0, 0, 0.85)
+    ),url("../images/bg-contact.jpg");
+    background-size: cover;
+    flex-direction: row !important;
+    align-items: center;
+}
+
+.bg-maps > div {
+    flex: 1;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-maps > div > div {
+    flex: 1;
+    text-align: center;
+}
+.bg-maps a {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 85%;
+}
+.bg-maps span {
+    color: white;
+    font-size: 1.5em;
+}
+.map-city-icon {
+    background-image: url("../images/map-city.png");
+}
+.map-monuments-icon {
+    background-image: url("../images/map-monuments.png");
+}
+.map-metro-icon {
+    background-image: url("../images/map-metro.png");
+}
+
+/* download.html */
+
+.bg-download {
+    background-image: linear-gradient(
+      rgba(56, 0, 0, 0.85),
+      rgba(56, 0, 0, 0.85)
+    ),url("../images/bg-contact.jpg");
+    background-size: cover;
+}
+
+.bg-download > h1 {
+    color: white;
+    text-align: center;
+    margin-top: 2em;
+}
+
+#programmi {
+    margin: 0 auto;
+    border: solid 1px rgb(255, 0, 0);
+    width: 80%;
+    min-height: 500px;
+    text-align: center;
+}
+
+#programmi > div {
+    width: 24%;
+    height: 100%;
+    display: inline-block;
+}
+#programmi span {
+    color: white;
+    font-size: 1.5em;
+}
+#programmi a {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 85%;
+}
+.pdf-icon {
+    background-image: url("../images/pdf.png");
+}
+.doc-icon {
+    background-image: url("../images/doc.png");
+}
