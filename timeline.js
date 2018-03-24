@@ -2,7 +2,6 @@ day = 0;
 
 // Quando si carica la pagina, calcola la timeline
 window.onload = function() {
-    boxResizing();
     tls = document.getElementsByClassName('timeline-container');
     for (tl of tls) {
         tl.getElementsByClassName('icon-leftarrow')[0].addEventListener("click", changeDay);
@@ -10,6 +9,13 @@ window.onload = function() {
     }
     calcTimeline();
     checkArrows();
+    // ---------------------------- AGGIUNTA INFO SULLA DURATA
+    for (item of document.getElementsByClassName('event-bubble')) {
+        if (!(item.classList.contains('start') || item.classList.contains('end'))) {
+            duration = Number(item.getAttribute('data-event-end'))-Number(item.getAttribute('data-event-begin'));
+            calcDurations(item, duration);
+        }
+    }
 };
 
 // Sul ridimensionamento della finestra, ricalcola la timeline
@@ -140,9 +146,36 @@ function changeDay() {
     checkArrows();
 }
 
-function boxResizing() {
-    for (box of document.getElementsByClassName('box')) {
-        console.log(box);
-        console.log(box.getBoundingClientRect().left);
+function calcDurations(elem, duration) {
+    h3s = elem.getElementsByTagName('h3');
+    // Crea il <br>
+    var br = document.createElement("br");
+    // Crea il nodo da aggiungere
+    var span = document.createElement("span");
+    var text = document.createTextNode("Tempo stimato: "+duration+"h");
+    span.appendChild(text);
+    if (h3s.length > 1) {
+        box = elem.children[0];
+        if (item.classList.contains('up')) {
+            var br2 = document.createElement("br");
+            // Aggiungi in fondo al box
+            box.insertBefore(br, h3s[0]);
+            box.insertBefore(br2, br);
+            box.insertBefore(span, br2);
+        } else if (item.classList.contains('down')) {
+            box.appendChild(br);
+            box.appendChild(span);
+        }
+    } else if (h3s.length == 1) {
+        /* Aggiungi dopo l'<h3> */
+        // Ottieni un riferimento, dopo il quale aggiungere il nodo
+        // reference = h3s[0].nextChild;
+        // Ottieni il genitore a cui aggiungere il <span>
+        box = elem.children[0];
+        reference = box.children[1];
+        // Aggiungi <br>
+        box.insertBefore(br, reference)
+        // Aggiungi <span>
+        box.insertBefore(span, br);
     }
 }
