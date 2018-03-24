@@ -615,8 +615,8 @@ li > a {
 .up .box > h3 { margin-top: 0; }
 .down .box > p { margin-bottom: 0; }
 .up .box > p { margin-bottom: 50px; }
-.end .box > p { margin-bottom: 80px; }
-.end .box > h3 { margin-top: 60px; }
+.end.up .box > p { margin-bottom: 80px; }
+.end.down .box > h3 { margin-top: 60px; }
 
 .down .box { top: 105%; }
 .up .box { bottom: 125%; }
