@@ -707,16 +707,30 @@ li > a {
 }
 
 .bg-services p {
+    position: relative;
     font-size: 1.5em;
     padding: 0 0 0 2.5em;
 }
 
 .bg-services img {
-    float: right;
-    margin-right: 100px;
+    position: absolute;
+    right: 2%;
+    top: -60%;
 }
 .bg-services a {
     color: white;
+}
+
+.imgleft {
+    left: 75%;
+    height: 200%;
+    width: auto;
+}
+.imgright {
+    top: 0% !important;
+    z-index: 1;
+    height: 200%;
+    width: auto;
 }
 
 /* maps.html */
