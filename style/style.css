@@ -635,7 +635,7 @@ li > a {
     left: 50%;
 }
 
-/* ------------------------------------------------------------------- */
+/* table_monuments.html ------------------------------------------- */
 
 .bg-table {
     background-image: linear-gradient(
@@ -672,8 +672,15 @@ li > a {
 .place table {
     width: 100%;
 }
+/* Stile dei link */
 .place a {
-    color: white;
+    color: red;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, transparent 50%, white 50%);
+    transition: background-position 0.2s;
+}
+.place a:hover {
+    background-position: 0 100%;
 }
 
 #detail-swarovski { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/bg-swarovski.jpg"); }
@@ -795,7 +802,6 @@ li > a {
 
 #programmi {
     margin: 0 auto;
-    border: solid 1px rgb(255, 0, 0);
     width: 80%;
     min-height: 500px;
     text-align: center;
@@ -803,7 +809,7 @@ li > a {
 
 #programmi > div {
     width: 24%;
-    height: 100%;
+    height: 30%;
     display: inline-block;
 }
 #programmi span {
