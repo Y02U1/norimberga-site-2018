@@ -230,42 +230,6 @@ td {
     }
 }
 
-#mail {
-    height: 50%;
-    width: 90%;
-    position: absolute;
-    bottom: 0;
-}
-
-#nome {
-    width: 40%;
-    font-size: 1.5em;
-}
-
-#mittente {
-    width: 40%;
-    font-size: 1.5em;
-}
-
-#oggetto {
-    width: 100%;
-    font-size: 1.5em;
-}
-
-#mail span {
-    width: 15%;
-}
-
-#mail textarea {
-    width: 100%;
-    height: 200px;
-    font-size: 1.5em;
-}
-
-input {
-    margin-bottom: 10px;
-}
-
 /* BEGIN */
 
 ul { list-style-type: none; /* Togli i punti agli <ul> */ }
@@ -512,6 +476,77 @@ li > a {
     }
     .gallery-row > div {
         border: 10px solid transparent;
+    }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 10%;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 90%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 45%;
+    max-height: auto;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
     }
 }
 
@@ -828,4 +863,77 @@ li > a {
 }
 .doc-icon {
     background-image: url("../images/doc.png");
+}
+
+/* contactme.html --------------------------------------------------------- */
+
+.bg-contactme {
+    background-image: linear-gradient(
+      rgba(56, 0, 0, 0.85),
+      rgba(56, 0, 0, 0.85)
+    ),url("../images/bg-contact.jpg");
+    background-size: cover;
+    color: white;
+}
+
+#mail {
+    height: 50%;
+    width: 90%;
+}
+
+#mail > *:not(h1) {
+    padding: 0 0 0 4em;
+}
+
+#mail > h1 {
+    padding: 2em 0 0 2em;
+}
+
+#nome {
+    width: 40%;
+    font-size: 1.5em;
+}
+
+#mittente {
+    width: 40%;
+    font-size: 1.5em;
+}
+
+#oggetto {
+    width: 100%;
+    font-size: 1.5em;
+}
+
+#mail span {
+    width: 15%;
+}
+
+#mail a {
+    color: white;
+    text-decoration: none;
+    padding: 1%;
+    height: 20%;
+    font-size: 2em;
+    margin: 0 auto;
+    text-align: center;
+    display: table;
+    border: 1px solid white;
+}
+
+#mail a:hover {
+    background-color: white;
+    color: rgba(56, 0, 0, 0.85);
+}
+
+#mail > form > * {
+    font-family: Georgia;
+}
+#mail textarea {
+    width: 100%;
+    height: 200px;
+    font-size: 1.5em;
+}
+
+input {
+    margin-bottom: 10px;
 }

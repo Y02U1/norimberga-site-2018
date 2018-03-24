@@ -1,7 +1,5 @@
-day = 0;
-
 // Quando si carica la pagina, calcola la timeline
-window.onload = function() {
+window.addEventListener("load",function () {
     tls = document.getElementsByClassName('timeline-container');
     for (tl of tls) {
         tl.getElementsByClassName('icon-leftarrow')[0].addEventListener("click", changeDay);
@@ -16,7 +14,7 @@ window.onload = function() {
             calcDurations(item, duration);
         }
     }
-};
+})
 
 // Sul ridimensionamento della finestra, ricalcola la timeline
 window.onresize = function() {
@@ -178,4 +176,13 @@ function calcDurations(elem, duration) {
         // Aggiungi <span>
         box.insertBefore(span, br);
     }
+}
+
+function getCoords(elem) {
+  let box = elem.getBoundingClientRect();
+
+  return {
+    top: box.top + pageYOffset,
+    left: box.left + pageXOffset
+  };
 }

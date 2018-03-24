@@ -1,15 +1,7 @@
 var lastScrollPosition = 0;
 var imgs = document.getElementsByClassName('img'); // Array
 var imgcurrent = 0;
-var counter = 0;
 var previous = window.scrollY;
-var sublinks = document.getElementsByClassName('sublink');
-
-for (var i = 0; i < sublinks.length; i++) {
-    sublinks[i].addEventListener("click", function (event) {
-        event.stopImmediatePropagation();
-    })
-}
 
 function setOpacity(opacityValue) {
     for (var i = 0; i < imgs.length; i++) {
@@ -239,109 +231,4 @@ function scrollIt(destination, duration = 200, easing = 'linear', callback) {
   }
 
   scroll();
-}
-
-function collapseMenu() {
-    document.getElementById('side-menu').style.width = "0%";
-    document.getElementById('fullpage').style.transform = "translateX(0%)";
-    document.getElementById('side-menu').style.overflow = "hidden";
-    document.getElementById('circle').style.left = "-50px";
-    var links = document.getElementsByClassName('sublink');
-    if (links[0].style.left == "10px") {
-        // Sposta i link a SX
-        for (var i = 0; i < links.length; i++) {
-            links[i].style.position = "absolute";
-            links[i].style.left = "-10%";
-        }
-    }
-}
-
-function openMenu() {
-    document.getElementById('side-menu').style.width = "12%";
-    document.getElementById('circle').style.left = "-100px";
-    document.getElementById('fullpage').style.transform = "translateX(12%)";
-    var lis = document.getElementById('sub-menulist').children;
-    if (lis[0].style.height != "0px") {
-        var links = document.getElementsByClassName('sublink');
-        // Rimetti i link a posto
-        for (var i = 0; i < links.length; i++) {
-            links[i].style.position = "absolute";
-            links[i].style.left = "10px";
-        }
-    }
-    setTimeout(function(){document.getElementById('side-menu').style.overflow = "visible";}, 500);
-}
-
-function collapseSubmenu() {
-    var links = document.getElementsByClassName('sublink');
-    var lis = document.getElementById('sub-menulist').children;
-    if (lis[0].style.height != "0px") {
-        // Sposta i link a SX
-        for (var i = 0; i < links.length; i++) {
-            links[i].style.position = "absolute";
-            links[i].style.left = "-300px";
-        }
-        // Chiudi i <li>
-        for(var i=0; i<lis.length; i++) {
-            lis[i].style.height = "0px";
-        }
-    } else {
-        // Espandi i <li>
-        for(var i=0; i<lis.length; i++) {
-            lis[i].style.height = "40px";
-        }
-        // Rimetti i link a posto
-        for (var i = 0; i < links.length; i++) {
-            links[i].style.position = "absolute";
-            links[i].style.left = "10px";
-        }
-    }
-}
-
-function checkEmail(emailField) {
-    isGood = true;
-    posAt = emailField.value.indexOf("@");
-    posDot = emailField.value.lastIndexOf(".");
-    if (emailField.value == "") {
-        document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Il campo non può essere vuoto";
-        isGood = false;
-    } else {
-        // IF NOT .
-        if (posDot == -1) {
-            document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Ci dev'essere almeno un .";
-            isGood = false;
-            // ELSE esegui i controlli
-        } else {
-            if (emailField.value.length-1==posDot) {
-                document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Non ci sono caratteri dopo il .";
-                isGood = false;
-            }
-        }
-        // IF esiste la @
-        if(posAt != -1) {
-            // Controlla +2 @
-            if (posAt != emailField.value.lastIndexOf("@")) {
-                document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> C'è più di 1 @";
-                isGood = false;
-            } else {
-                if(posAt < 1) {
-                    document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Non ci sono caratteri prima di @";
-                    isGood = false;
-                }
-                if (posDot != -1) {
-                    if (posDot-posAt < 2) {
-                        document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Non ci sono caratteri tra @ e .";
-                        isGood = false;
-                    }
-                }
-            }
-        // ELSE informa mancanza @
-        } else {
-            document.getElementById('mail-popup').innerHTML = "<i class='icon-cross-slim'></i> Non c'è una @";
-            isGood = false;
-        }
-        if (isGood) {
-            document.getElementById('mail-popup').innerHTML = "<i class='icon-tick'></i> Indirizzo e-mail verificato";
-        }
-    }
 }

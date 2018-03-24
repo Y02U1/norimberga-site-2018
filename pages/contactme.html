@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Example</title>
+        <link rel="stylesheet" type="text/css" href="../style/style.css" />
+        <link rel="stylesheet" type="text/css" href="../style/font-ivan.css" />
+    </head>
+    <body>
+        <div id="side-menu">
+			<ul>
+				<li id="collapse-menu" class="menu-el"><i class="icon-leftarrow"></i>&nbsp;Nascondi&nbsp;menu</li>
+				<li id="side-menu-title">Monaco&nbsp;di&nbsp;Baviera<br />Norimberga<br />A.S.&nbsp;2017-2018</li>
+				<li class="menu-el"><a href="../index.html">Home</a></li>
+				<li class="menu-el"><a href="days.html">Giorni</a></li>
+				<li class="menu-el"><a href="download.html">Download</a></li>
+				<li class="menu-el"><a href="maps.html">Mappe</a></li>
+				<li class="menu-el"><a href="table_monuments.html">Monumenti</a></li>
+				<li class="menu-el"><a href="services.html">Agenzia</a></li>
+                <li class="menu-el"><a href="contactme.html">Contattami</a></li>
+				<li class="menu-el"><a href="gallery.html">Galleria</a></li>
+			</ul>
+		</div>
+        <div id="circle">
+            <div id="right-circle">
+                <i class="icon-rightarrow open-menu"></i>
+            </div>
+        </div>
+        <div id="fullpage" class="bg-contactme">
+            <div id="mail">
+                <h1>Contattami!</h1>
+                <p>
+                    Ti serve sapere altro? Mandami una mail. Basta compilare i campi sottostanti e premere il bottone, quando hai finito.<br />
+                    Non ti preoccupare di eventuali errori: verrai informato di cosa correggere e come.
+                </p>
+                <form>
+                    <input id="nome" placeholder="Tuo nome e cognome" required/>
+                    <input id="mittente" placeholder="Tuo indirizzo e-mail" required/>
+                    <span id="mail-popup"><i class="icon-cross-slim"></i> Il campo non può essere vuoto</span>
+                    <input id="oggetto" placeholder="Oggetto della mail" required/>
+                    <textarea id="corpo" placeholder="Scrivi qua il corpo della mail..." required></textarea>
+                    <a id="btn-sendmail"><i class="icon-mail-open"></i>Mandami la mail!</a>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="../scripts/main.js"></script>
+        <script type="text/javascript" src="../scripts/mail.js"></script>
+    </body>
+</html>

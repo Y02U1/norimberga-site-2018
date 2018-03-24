@@ -10,85 +10,21 @@
     <body>
         <div id="side-menu">
 			<ul>
-				<li id="collapse-menu" class="menu-el" onclick="collapseMenu();"><i class="icon-leftarrow"></i>&nbsp;Nascondi&nbsp;menu</li>
+				<li id="collapse-menu" class="menu-el"><i class="icon-leftarrow"></i>&nbsp;Nascondi&nbsp;menu</li>
 				<li id="side-menu-title">Monaco&nbsp;di&nbsp;Baviera<br />Norimberga<br />A.S.&nbsp;2017-2018</li>
-				<li class="menu-el"><a href="index.html">Home</a></li>
-				<li id="father" onclick="collapseSubmenu();" class="menu-el"><i class="icon-downarrow"></i>&nbsp;Elenco&nbsp;giorni
-					<ul id="sub-menulist">
-						<li class="menu-el submenu-el tooltip-trigger" id="btn1">
-							<a class="sublink" href="days/day1.html">Luned&igrave;</a>
-							<span class="tooltip">
-								<b>Giorno 1 - Viaggio di andata (tappa a Wattens, AUT)</b><br />
-								<ul>
-									<li>Museo Swarovski Crystal Worlds</li>
-								</ul>
-							</span>
-						</li>
-						<li class="menu-el submenu-el tooltip-trigger" id="btn2">
-							<a class="sublink" href="days/day2.html">Marted&igrave;</a>
-							<span class="tooltip">
-								<b>Giorno 2 - Norimberga (DE)</b><br />
-								<ul>
-									<li>Faber-Castell</li>
-									<li>Museo Nazionale Germanico</li>
-								</ul>
-							</span>
-						</li>
-						<li class="menu-el submenu-el tooltip-trigger" id="btn3">
-							<a class="sublink" href="days/day3.html">Mercoled&igrave;</a>
-							<span class="tooltip">
-								<b>Giorno 3 - Norimberga (DE)</b><br />
-								<ul>
-									<li>Piazza del mercato e Schonen Brunnen</li>
-									<li>Frauenkirche</li>
-									<li>Cattedrale di S. Sebaldo</li>
-									<li>Memoriale dei Processi di Norimberga</li>
-								</ul>
-							</span>
-						</li>
-						<li class="menu-el submenu-el tooltip-trigger" id="btn4">
-							<a class="sublink" href="days/day4.html">Gioved&igrave;</a>
-							<span class="tooltip">
-								<b>Giorno 4 - Monaco di Baviera (DE)</b><br />
-								<ul>
-									<li>Allianz Arena (facoltativo)</li>
-									<li>Deutches Museum</li>
-								</ul>
-							</span>
-						</li>
-						<li class="menu-el submenu-el tooltip-trigger" id="btn5">
-							<a class="sublink" href="days/day5.html">Venerd&igrave;</a>
-							<span class="tooltip">
-								<b>Giorno 5 - Monaco di Baviera (DE)</b><br />
-								<ul>
-									<li>Museo BMW e BMW Welt</li>
-									<li>Residenz</li>
-									<li>Teatro Cuvilliès</li>
-								</ul>
-							</span>
-						</li>
-						<li class="menu-el submenu-el tooltip-trigger" id="btn6">
-							<a class="sublink" href="days/day6.html">Sabato</a>
-							<span class="tooltip">
-								<b>Giorno 6 - Viaggio di ritorno (tappa a Dachau e Innsbruck, DE e AUT)</b><br />
-								<ul>
-									<li>Campo di sterminio di Dachau</li>
-									<li>Centro storico di Innsbruck</li>
-								</ul>
-							</span>
-						</li>
-					</ul>
-				</li>
-				<li class="menu-el"><a href="download.html">Download</a></li>
-				<li class="menu-el"><a href="maps.html">Mappe</a></li>
-				<li class="menu-el"><a href="table_monuments.html">Monumenti</a></li>
-				<li class="menu-el"><a href="services.html">Agenzia</a></li>
-				<li class="menu-el"><a href="gallery.html">Galleria</a></li>
+				<li class="menu-el"><a href="pages/index.html">Home</a></li>
+				<li class="menu-el"><a href="pages/days.html">Giorni</a></li>
+				<li class="menu-el"><a href="pages/download.html">Download</a></li>
+				<li class="menu-el"><a href="pages/maps.html">Mappe</a></li>
+				<li class="menu-el"><a href="pages/table_monuments.html">Monumenti</a></li>
+				<li class="menu-el"><a href="pages/services.html">Agenzia</a></li>
+                <li class="menu-el"><a href="pages/contactme.html">Contattami</a></li>
+				<li class="menu-el"><a href="pages/gallery.html">Galleria</a></li>
 			</ul>
 		</div>
         <div id="circle">
             <div id="right-circle">
-                <i onclick="openMenu();" class="icon-rightarrow open-menu"></i>
+                <i class="icon-rightarrow open-menu"></i>
             </div>
         </div>
         <div id="fullpage">
@@ -138,72 +74,55 @@
             <!-- Norimberga -->
             <div class="img img2">
                 <div>
-                    <h2>Norimberga</h2>
-                    <h3>Sommario</h3>
-                    <table class="city-summary">
-                        <tr>
-                            <td>Abitanti</td>
-                            <td>509.975</td>
-                        </tr>
-                        <tr>
-                            <td>Clima</td>
-                            <td>Leggermente continentale: in inverno si raggiungono temperature sotto lo zero mentre d’estate si oltrepassano i 20°.</td>
-                        </tr>
-                        <tr>
-                            <td>Valuta</td>
-                            <td>Euro</td>
-                        </tr>
-                    </table>
                     <!-- sposta sulla DX
 					<p>
                         Seconda città della Baviera.
                         Area metropolitana costruita nel 2005.
                     </p> -->
+                    <h2>Norimberga</h2>
                     <h3>Storia</h3>
                     <p>
-                        La prima citazione della città di Nuorenberc (monte roccioso) risale al 1050, nel 1219 l'imperatore Federico II le accorda il privilegio di autogovernarsi.
-                        La città si espanse dal 1400 al 1600 grazie ad una fiorente attività commerciale ed una altrettanto vivace vita culturale e artistica.
-                        Storicamente, la città, di aspetto monumentale, faceva da sfondo tradizionale per le diete (riunioni) imperiali.
-                        La scoperta del nuovo mondo e l'esclusione della città dalle nuove vie commerciali provocarono una lenta decadenza interrotta solo nel XIX secolo con la nascita e l'espansione dell'industria del giocattolo.
-                        Norimberga è stata anche la roccaforte del potere nazista insieme a Monaco di Baviera e alla capitale Berlino.
-                        La città è stata sede di raduni di propaganda hitleriana, presso lo Zeppelinwiese in cui si teneva annualmente il Parteitag.
-						Qui furono emanate le leggi razziali del 1935 e divenne nel 1945-1946 sede del tribunale speciale alleato che processò i criminali di guerra nazisti.
+                        Denominata Norimberga a causa della sua posizione (il nome significa letteralmente <i>"monte roccioso"</i>), la città si espanse nel corso
+                        della sua storia grazie ad una fiorente attività commerciale ed artistica, nonché all'influenza dell'impero tedesco.<br />
+                        Nonostante la scoperta del nuovo mondo il suo sviluppo non si arresta grazie anche all'industria del giocattolo.<br />
+                        Nell'era moderna fu anche roccaforte del partito nazista, che spesso fece raduni propagandistici e da qui emanò le leggi razziali del 1935.
+                        Fu anche sede dei processi ai criminali di guerra.
+                    </p>
+                    <h3>Caratteristiche</h3>
+                    <p>
+                        Conta circa mezzo milione di abitanti ed è caratterizzata da clima moderatamente continentale.
+                    </p>
+                    <h3>Famosa per...</h3>
+                    <p>
+                        Essere stata sede dei <b>processi di Norimberga</b> nel 1945-1946.<br />Sono molto famosi i <b>mercatini</b> e le <b>fiere</b> che si tengono nella città, ed è conosciuta
+                        sopratutto per l'industria del <b>giocattolo</b>.
                     </p>
                 </div>
             </div>
             <!-- Monaco di Baviera -->
             <div class="img img3">
                 <div>
-                    <h2>Monaco di Baviera</h2>
-                    <h3>Sommario</h3>
-                    <table class="city-summary">
-                        <tr>
-                            <td>Abitanti</td>
-                            <td>1.528.849</td>
-                        </tr>
-                        <tr>
-                            <td>Clima</td>
-                            <td>Continentale: inverni lunghi e rigidi (spesso anche sotto i -15°C) ed estati calde (si oltrepassano spesso i 25°).</td>
-                        </tr>
-                        <tr>
-                            <td>Valuta</td>
-                            <td>Euro</td>
-                        </tr>
-                    </table>
                     <!-- sposta sulla dx
 					<p>
-                        Prima città della Baviera e capitale della Germania.
+                        Prima città della Baviera.
                     </p> -->
+                    <h2>Monaco di Baviera</h2>
                     <h3>Storia</h3>
                     <p>
-						Nel 1158 Enrico il Leone, installa un accampamento militare battezzandolo Munichen, che nel 1208 diviene ufficialmente città.
-						Monaco acquisisce importanza sotto gli Asburgo, divenendo un centro dell'arte barocca.
-						Nel 1882 a Monaco fu introdotta la luce elettrica e la nello stesso anno ospitò la prima fiera dell'elettricità in Germania. 19 più tardi venne aperto lo zoo Tierpark Hellabrunn.
-						Nel novembre del 1918 i comunisti presero il potere, ma lo persero meno di un anno dopo, per opera del neonato partito nazista.
-						La città divenne una roccaforte Nazista nel 1933 e fu vitale per l'ascesa del Nazismo, tanto da essere denominata "capitale del movimento". Molti edifici nazisti sono stati eretti, e di questi tanti sono tuttora esistenti.
-						Monaco rimase danneggiata dai bombardamenti durante la guerra, e venne occupata dagli americani il 2 maggio 1945. Dopo la guerra Monaco fu in gran parte ricostruita.
-						Nel 1972 Monaco ospitò la XX edizione delle Olimpiadi.
-						Nel 1974 fu sede di molte partite dei Mondiali tenutisi in Germania Ovest. Ospitò i mondiali di Germania 2006.
+                        Viene fondata nel 1158 da Enrico il Leone, ma è sotto gli Asburgo che acquisisce importanza, divenendo un centro dell'arte barocca.<br />
+                        Famosa nell'era moderna per essere stata "capitale del movimento" nazista dal 1933 sino al 2 maggio 1945, quando venne occupata dagli americani.<br />
+                        Durante la guerra subì numerosi danni e al termine del conflitto venne in gran parte ricostruita.
+                    </p>
+                    <h3>Caratteristiche</h3>
+                    <p>
+                        Conta circa un milione e mezzo di abitanti ed è caratterizzata da clima continentale.
+                    </p>
+                    <h3>Famosa per...</h3>
+                    <p>
+                        Essere la <b>seconda città più grande ed importante della Germania</b>, dopo Berlino.<br />Inoltre ospita <b>il più grande museo scientifico d'Europa</b>, ed uno dei più
+                        antichi e prestigiosi del mondo: il <b>Deutsches Museum</b>.<br />Molto conosciuta anche per l'<b>Oktoberfest</b>, evento annuale in cui scorrono fiumi di birra per la cittadina.<br />
+                        La principale polisportiva cittadina, il <b>Bayern Munchen</b>, è tra le più importanti al mondo; la squadra di calcio, il FC Bayern Munchen, è anche la squadra più titolata
+                        di Germania, nonché una delle più vittoriose nel mondo.
                     </p>
                 </div>
             </div>
@@ -374,24 +293,10 @@
                             </td>
                         </tr>
                     </table>
-                    <div id="mail">
-                        <h3>Manca qualcosa?</h3>
-                        <p>
-                            Ti serve sapere altro? Mandami una mail. Basta compilare i campi sottostanti e premere il bottone, quando hai finito.<br />
-                            Non ti preoccupare di eventuali errori: verrai informato di cosa correggere e come.
-                        </p>
-
-                        <!-- <form>
-                            <input id="nome" placeholder="Tuo nome e cognome"/>
-                            <input id="mittente" placeholder="Tuo indirizzo e-mail" onkeyup="checkEmail(this);"/>
-                            <span id="mail-popup"><i class="icon-cross-slim"></i> Il campo non può essere vuoto</span>
-                            <input id="oggetto" placeholder="Oggetto della mail"/>
-                            <textarea placeholder="Scrivi qua il corpo della mail..."></textarea>
-                        </form> -->
-                    </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/home.js"></script>
     </body>
 </html>
