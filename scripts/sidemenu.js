@@ -1,7 +1,7 @@
-window.onload = function (){
+window.addEventListener("load", function () {
     document.getElementById('collapse-menu').addEventListener("click", collapseMenu);
     document.getElementById('right-circle').children[0].addEventListener("click", openMenu);
-}
+})
 
 function collapseMenu() {
     document.getElementById('side-menu').style.width = "0%";
