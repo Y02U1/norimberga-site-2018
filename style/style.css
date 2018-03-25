@@ -13,6 +13,12 @@ body {
     height: 100%;
 }
 
+.contatoreaccessi {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
 /* Headings */
 
 h3 {
@@ -617,17 +623,24 @@ li > a {
     border-radius: 50%;
 }
 
-.event-bubble:hover .box {
-    visibility: visible;
+.event-bubble img {
+    width: 100%;
+    border-radius: 50%;
 }
 
-.event-bubble > i {
+.event-bubble:hover .box { visibility: visible; }
+
+.event-bubble > i, .open-detail {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 200%;
 }
+
+.open-detail { display: none; }
+.event-bubble:hover .open-detail { display: block; }
+.event-bubble:hover img { display: none; }
 
 .down {
     left: 20%;

@@ -156,18 +156,16 @@ function calcDurations(elem, duration) {
         box = elem.children[0];
         if (item.classList.contains('up')) {
             var br2 = document.createElement("br");
-            // Aggiungi in fondo al box
             box.insertBefore(br, h3s[0]);
             box.insertBefore(br2, br);
             box.insertBefore(span, br2);
         } else if (item.classList.contains('down')) {
+            // Aggiungi in fondo al box
             box.appendChild(br);
             box.appendChild(span);
         }
     } else if (h3s.length == 1) {
         /* Aggiungi dopo l'<h3> */
-        // Ottieni un riferimento, dopo il quale aggiungere il nodo
-        // reference = h3s[0].nextChild;
         // Ottieni il genitore a cui aggiungere il <span>
         box = elem.children[0];
         reference = box.children[1];

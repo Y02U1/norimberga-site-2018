@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'ir-icons';
-  src:  url('fonts/ir-icons.eot?ht4ul4');
-  src:  url('fonts/ir-icons.eot?ht4ul4#iefix') format('embedded-opentype'),
-    url('fonts/ir-icons.ttf?ht4ul4') format('truetype'),
-    url('fonts/ir-icons.woff?ht4ul4') format('woff'),
-    url('fonts/ir-icons.svg?ht4ul4#ir-icons') format('svg');
+  src:  url('fonts/ir-icons.eot?49ts5w');
+  src:  url('fonts/ir-icons.eot?49ts5w#iefix') format('embedded-opentype'),
+    url('fonts/ir-icons.ttf?49ts5w') format('truetype'),
+    url('fonts/ir-icons.woff?49ts5w') format('woff'),
+    url('fonts/ir-icons.svg?49ts5w#ir-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,12 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-stadium:before {
+  content: "\e91f";
+}
+.icon-museum:before {
+  content: "\e91d";
+}
 .icon-clock:before {
   content: "\e91a";
 }
@@ -110,6 +116,9 @@ i {
 }
 .icon-uparrow:before {
   content: "\e913";
+}
+.icon-city:before {
+  content: "\e91e";
 }
 .icon-web:before {
   content: "\e9c9";
