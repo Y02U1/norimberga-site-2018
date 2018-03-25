@@ -182,6 +182,9 @@ h1 {
 }
 
 #hint {
+    position: absolute;
+    bottom: 0;
+    right: 30%;
     font-size: 2em;
     text-align: center;
     font-style: italic;
