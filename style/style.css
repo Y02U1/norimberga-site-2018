@@ -757,19 +757,19 @@ li > a:hover {
     background-position: 0 100%;
 }
 
-#detail-swarovski { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/bg-swarovski.jpg"); }
-#detail-faber-castell { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/gallery-3.jpg"); }
-#detail-nationalmuseum { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/gallery-6.jpg"); }
-#detail-hauptmarkt { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/bg-contact.jpg"); }
-#detail-lorenzkirche { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/lorenzkirche.jpg"); }
-#detail-nazi-party { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/nazi-party.jpg"); }
-#detail-deutsches-museum { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/gallery-4.jpg"); }
-#detail-allianz { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/gallery-7.jpg"); }
-#detail-bmw-welt { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/bmw-welt.jpg"); }
-#detail-bmw-museum { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/bmw-museum.jpg"); }
-#detail-residenz { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/residenz.jpg"); }
-#detail-cuvillies { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/gallery-2.jpg"); }
-#detail-dachau { background-image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ),url("../images/gallery-5.jpg"); }
+#detail-swarovski { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/bg-swarovski.jpg"); }
+#detail-faber-castell { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-3.jpg"); }
+#detail-nationalmuseum { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-6.jpg"); }
+#detail-hauptmarkt { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/bg-contact.jpg"); }
+#detail-lorenzkirche { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/lorenzkirche.jpg"); }
+#detail-nazi-party { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/nazi-party.jpg"); }
+#detail-deutsches-museum { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-4.jpg"); }
+#detail-allianz { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-7.jpg"); }
+#detail-bmw-welt { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/bmw-welt.jpg"); }
+#detail-bmw-museum { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/bmw-museum.jpg"); }
+#detail-residenz { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/residenz.jpg"); }
+#detail-cuvillies { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-2.jpg"); }
+#detail-dachau { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-5.jpg"); }
 
 /* services.html */
 
