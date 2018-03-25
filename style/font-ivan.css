@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'ir-icons';
-  src:  url('fonts/ir-icons.eot?7t3bhw');
-  src:  url('fonts/ir-icons.eot?7t3bhw#iefix') format('embedded-opentype'),
-    url('fonts/ir-icons.ttf?7t3bhw') format('truetype'),
-    url('fonts/ir-icons.woff?7t3bhw') format('woff'),
-    url('fonts/ir-icons.svg?7t3bhw#ir-icons') format('svg');
+  src:  url('fonts/ir-icons.eot?gbni9u');
+  src:  url('fonts/ir-icons.eot?gbni9u#iefix') format('embedded-opentype'),
+    url('fonts/ir-icons.ttf?gbni9u') format('truetype'),
+    url('fonts/ir-icons.woff?gbni9u') format('woff'),
+    url('fonts/ir-icons.svg?gbni9u#ir-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-croissant:before {
+  content: "\e922";
+}
 .icon-bus:before {
   content: "\e920";
 }

@@ -10,8 +10,11 @@ window.addEventListener("load",function () {
     // ---------------------------- AGGIUNTA INFO SULLA DURATA
     for (item of document.getElementsByClassName('event-bubble')) {
         if (!(item.classList.contains('start') || item.classList.contains('end'))) {
+            // Se NON è un evento di inizio o fine...
             duration = Number(item.getAttribute('data-event-end'))-Number(item.getAttribute('data-event-begin'));
-            calcDurations(item, duration);
+            calcDuration(item, duration);
+        } else {
+            calcBeginEndDay(item);
         }
     }
 })
@@ -144,7 +147,7 @@ function changeDay() {
     checkArrows();
 }
 
-function calcDurations(elem, duration) {
+function calcDuration(elem, duration) {
     h3s = elem.getElementsByTagName('h3');
     // Crea il <br>
     var br = document.createElement("br");
@@ -186,4 +189,57 @@ function getCoords(elem) {
     top: box.top + pageYOffset,
     left: box.left + pageXOffset
   };
+}
+
+function calcBeginEndDay(elem) {
+    // Crea il <br>
+    var br = document.createElement("br");
+    // Crea il nodo da aggiungere
+    var span = document.createElement("span");
+    var icon = document.createElement("i");
+    var text;
+    // SELEZIONE: se è un evento di inizio o fine...
+    if (elem.classList.contains('start') && elem.hasAttribute('data-begin')) {
+        // Se INIZIO
+        icon.setAttribute('class','icon-alarm-clock');
+        span.appendChild(icon);
+        text = document.createTextNode(" "+hourToPM(elem.getAttribute('data-begin')));
+        span.appendChild(text);
+    } else if (elem.classList.contains('end') && elem.hasAttribute('data-end')) {
+        // Se FINE
+        icon.setAttribute('class','icon-bed');
+        span.appendChild(icon);
+        text = document.createTextNode(" "+hourToPM(elem.getAttribute('data-end')));
+        span.appendChild(text);
+    }
+    /* Aggiungi dopo l'<h3> */
+    // Ottieni il genitore a cui aggiungere il <span>
+    box = elem.children[0];
+    reference = box.children[1];
+    // Aggiungi <br>
+    box.insertBefore(br, reference)
+    // Aggiungi <span>
+    box.insertBefore(span, br);
+}
+
+function hourToPM(time) {
+    var hourString = "";
+    var timeNum = Number(time);
+    if (timeNum % 1 == 0) {
+        // Non ha decimali
+        if (time.length == 2) {
+            hourString+=time+":"+"00";
+        } else if (time.length == 1) {
+            hourString+="0"+time+":"+"00";
+        }
+    } else {
+        // Ha decimali
+        var hour = (timeNum-0.5).toString();
+        if (hour.length == 2) {
+            hourString+=hour+":"+"30";
+        } else if (hour.length == 1) {
+            hourString+="0"+hour+":"+"30";
+        }
+    }
+    return hourString;
 }
