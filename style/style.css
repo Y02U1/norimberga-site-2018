@@ -655,6 +655,7 @@ li > a:hover {
 .open-detail { display: none; }
 .event-bubble:hover .open-detail { display: block; }
 .event-bubble:not(#innsbruck):hover img { display: none; }
+.event-bubble:not(#innsbruck):hover { cursor: pointer; }
 
 .down {
     left: 20%;
