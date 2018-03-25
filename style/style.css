@@ -147,7 +147,7 @@ h1 {
     color: white;
 }
 
-@keyframes blink {
+/* @keyframes blink {
     0% {color: white;}
     50% {color: transparent;}
     100% {color: white;}
@@ -155,7 +155,7 @@ h1 {
 
 .btn-round:hover {
     animation: blink 0.8s infinite;
-}
+} */
 
 @media only screen and (max-width: 1366px) {
     .btn-round {
@@ -342,6 +342,10 @@ li.submenu-el {
     float: right;
 }
 
+#right-circle > i:hover {
+    color: white;
+}
+
 #openmenu {
     width: 32px;
     height: 32px;
@@ -360,6 +364,12 @@ li > a {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 1.5em;
+}
+.active {
+    color: #FF5747;
+}
+li > a:hover {
+    color: #FF5747;
 }
 
 .open-menu {
@@ -425,6 +435,9 @@ li > a {
 #collapse-menu {
     padding: 10px;
     cursor: pointer;
+}
+#collapse-menu:hover {
+    color: #FF5747;
 }
 
 /* PAGE: gallery.html */
@@ -536,7 +549,7 @@ li > a {
 .close {
     position: absolute;
     top: 15px;
-    right: 35px;
+    left: 35px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
