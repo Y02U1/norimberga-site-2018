@@ -150,7 +150,10 @@ function calcDurations(elem, duration) {
     var br = document.createElement("br");
     // Crea il nodo da aggiungere
     var span = document.createElement("span");
-    var text = document.createTextNode("Tempo stimato: "+duration+"h");
+    var icon = document.createElement("i");
+    icon.setAttribute('class','icon-clock');
+    span.appendChild(icon);
+    var text = document.createTextNode(" "+duration+"h");
     span.appendChild(text);
     if (h3s.length > 1) {
         box = elem.children[0];
