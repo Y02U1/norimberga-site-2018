@@ -607,8 +607,19 @@ li > a:hover {
     transition: opacity 0.1s;
     transform: translate(-50%,-50%);
 }
+.bg-days h1 > i:hover {
+    color: #FF5747;
+    cursor: pointer;
+}
+.bg-days h4 {
+    color: white;
+    top: 6%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
 .bg-days h1 span {
-    min-width: 420px;
+    min-width: 600px;
     display: inline-block;
 }
 
@@ -654,8 +665,8 @@ li > a:hover {
 
 .open-detail { display: none; }
 .event-bubble:hover .open-detail { display: block; }
-.event-bubble:not(#innsbruck):hover img { display: none; }
-.event-bubble:not(#innsbruck):hover { cursor: pointer; }
+.event-bubble[onclick]:hover img { display: none; }
+.event-bubble[onclick]:hover { cursor: pointer; }
 
 .down {
     left: 20%;
