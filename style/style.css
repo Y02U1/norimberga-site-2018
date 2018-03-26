@@ -348,76 +348,89 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     .gallery-row > div { border: 10px solid transparent; }
 }
 
-/* The Modal (background) */
+/*
+    gallery.html -> modale
+*/
+
+/* Modale */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    display: none; /* Default: nascosto */
+    position: fixed; /* Tienilo in posizione rispetto al viewport */
     z-index: 1; /* Sit on top */
     padding-top: 10%;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 90%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    /* Dimensioni */
+    width: 100%;
+    height: 90%;
+    /* Eventualmente, scrolling abilitato */
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Colore di ripiego */
+    background-color: rgba(0,0,0,0.9); /* Nero semitrasparente */
 }
 
-/* Modal Content (Image) */
+/* Il contenuto del modale (quindi l'immagine) */
 .modal-content {
+    /* Margini automatici, block -> centrare il contenuto */
     margin: auto;
     display: block;
+    /* Dimensioni */
     width: 45%;
     max-height: auto;
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
+/* Didascalia dell'immagine del modale */
 #caption {
+    /* Margini automatici, block -> centrare il contenuto */
     margin: auto;
     display: block;
+    /* Dimensioni */
     width: 80%;
     max-width: 700px;
+    /* Centra, contenuto grigio chiaro */
     text-align: center;
     color: #ccc;
     padding: 10px 0;
     height: 150px;
 }
 
-/* Add Animation - Zoom in the Modal */
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+/* Aggiungi un'animazione di zoom */
 .modal-content, #caption {
     animation-name: zoom;
     animation-duration: 0.6s;
 }
 
-@keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-}
 
-/* The Close Button */
+/* Il bottone di chiusura */
 .close {
+    /* Posiziona in alto a sx */
     position: absolute;
     top: 15px;
     left: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+    color: #f1f1f1; /* Quasi bianco */
+    font-size: 2.5em; /* Dimensione del testo, di chiusura */
+    font-weight: bold; /* Grassetto */
+    transition: 0.3s; /* Transizione */
 }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+.close:hover, .close:focus {
+    color: #bbb; /* Quasi grigio */
+    text-decoration: none; /* Togli la decorazione */
+    cursor: pointer; /* Puntatore mouse */
 }
 
-/* 100% Image Width on Smaller Screens */
+/*RWD*/
 @media only screen and (max-width: 700px){
     .modal-content { width: 100%; }
 }
 
-/* PAGE: days.html */
+/*
+    days.html
+*/
 
 .bg-days {
     /* Sfondo */
