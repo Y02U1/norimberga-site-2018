@@ -222,6 +222,7 @@ function calcBeginEndDay(elem) {
     box.insertBefore(span, br);
 }
 
+/* Converti l'ora "time" (6 / 6,5) in 06:00 / 06:30 */
 function hourToPM(time) {
     var hourString = "";
     var timeNum = Number(time);

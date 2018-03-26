@@ -4,24 +4,36 @@ window.addEventListener("load", function () {
     document.getElementById('mittente').addEventListener("change", checkEmail);
 })
 
+/* Valida la form, parametro l'evento */
 function validateForm(e) {
-    e.preventDefault();
+    e.preventDefault(); // Impedisci la normale azione
+    // Controlla i campi vuoti e l'email
     if (checkEmail(document.getElementById('mittente')) &&
         document.getElementById('nome').value != '' &&
         document.getElementById('oggetto').value != '' &&
         document.getElementById('corpo').value != '') {
-        window.location.href = buildMailTo();
-        document.getElementsByTagName('form')[0].submit();
+        // Se va tutto bene
+        window.location.href = buildMailTo(); // Crea l'URL e vai
+        document.getElementsByTagName('form')[0].submit(); // E "submitta" la form
     } else if (document.getElementById('nome').value != '' &&
                 document.getElementById('oggetto').value != '' &&
                 document.getElementById('corpo').value != '') {
-        alert("Controlla il campo della mail");
-        return false;
+        alert("Controlla il campo della mail"); // Dì cosa controllare
+        document.getElementById('mittente').focus(); // Fai focus sul mittente
+        return false; // E ritorna falso
     } else {
-        alert("Riempi tutti i campi");
+        alert("Riempi tutti i campi"); // Dì di riempire tutto
     }
 }
 
+/*
+    Controlla il campo dell'email:
+        aggiornando una <span> per informare l'utente, con qualche piccola decorazione stilistica
+        ritornando un valore, true/false a seconda dell'esito
+
+    Evito commenti al codice estremamente didascalico: se non si riescono a capire
+    le condizioni osservare il testo messo sulla <span>
+*/
 function checkEmail() {
     emailField = document.getElementById('mittente');
     isGood = true;
@@ -75,6 +87,7 @@ function checkEmail() {
     return isGood;
 }
 
+/* Crea il link mailto */
 function buildMailTo() {
     address = "mailto:ivan4.ravasi@gmail.com";
     subject = "?subject="+document.getElementById('oggetto').value;

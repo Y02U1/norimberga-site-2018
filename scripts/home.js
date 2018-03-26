@@ -1,31 +1,21 @@
-var lastScrollPosition = 0;
-var imgs = document.getElementsByClassName('img'); // Array
-var imgcurrent = 0;
-var previous = window.scrollY;
+var imgs = document.getElementsByClassName('img'); // Array delle immagini
+var imgcurrent = 0; // Indice dell'immagine corrente
+var previous = window.scrollY; // Precedente scroll position
 
-function setOpacity(opacityValue) {
-    for (var i = 0; i < imgs.length; i++) {
-        for (child of imgs[i].children[0].children) {
-            if (opacityValue) {
-                child.style.transitionDuration = "1s";
-            } else {
-                child.style.transitionDuration = "0s";
-            }
-            child.style.opacity = opacityValue;
-        }
-    }
-}
+window.addEventListener("load", function () {
+    window.addEventListener("scroll", debouncedSlide); /* Sullo scroll attiva il codice */
+})
 
 var debouncedSlide = debounce(function() {
     var scrlTime = 500;
     if (window.scrollY > previous) {
         /*
             DOWN
-            De-opacizza
-            Rimuovi scrolling e Scrolla
-            (Altro)
-            Opacizza
-            Ammetti scrolling
+                De-opacizza
+                Rimuovi scrolling e Scrolla
+                (Altro)
+                Opacizza
+                Ammetti scrolling
         */
         var pos = determineScrollPos(false); // Determina pos
         if (pos) {
@@ -57,11 +47,11 @@ var debouncedSlide = debounce(function() {
     } else {
         /*
             UP
-            De-opacizza
-            (Altro)
-            Rimuovi scrolling e Scrolla
-            Opacizza
-            Ammetti scrolling
+                De-opacizza
+                (Altro)
+                Rimuovi scrolling e Scrolla
+                Opacizza
+                Ammetti scrolling
         */
         var pos = determineScrollPos(true); // Determina pos
         if (pos || pos == 0) {
@@ -90,24 +80,36 @@ var debouncedSlide = debounce(function() {
     }
 }, 200, true);
 
-window.addEventListener("scroll", debouncedSlide);
-
-function logScrollDirection() {
-    if (window.scrollY > previous) {
-        // console.log('down');
-        var pos = determineScrollPos(false);
-        scrollIt(pos);
-    } else {
-        // console.log('up');
-        var pos = determineScrollPos(true);
-        scrollIt(pos);
+/*
+    Imposta l'opacità del contenuto delle immagini
+        opacityValue = valore dell'opacità (0-1)
+*/
+function setOpacity(opacityValue) {
+    // Itera tra le immagini...
+    for (var i = 0; i < imgs.length; i++) {
+        // ...Itera tra i figli (*) del figlio (<div>) dell'immagine...
+        for (child of imgs[i].children[0].children) {
+            // ...A seconda dell'opacità attiva/disattiva la transizione
+            if (opacityValue) {
+                child.style.transitionDuration = "1s";
+            } else {
+                child.style.transitionDuration = "0s";
+            }
+            // ...E imposta l'opacità sulla base dell'argomento
+            child.style.opacity = opacityValue;
+        }
     }
-    previous = window.scrollY;
 }
 
+/*
+    Determina dove effettuare lo scrolling, aggiornando l'imgcurrent
+        isUpward:
+            true = direzione UP
+            false = direzione DOWN
+*/
 function determineScrollPos(isUpward) {
     if (isUpward) {
-        // Direzione ^
+        // Direzione UP
         if (imgcurrent == 0) {
             return false;
         } else {
@@ -115,7 +117,7 @@ function determineScrollPos(isUpward) {
             return getCoords(imgs[--imgcurrent]).top;
         }
     } else {
-        // Direzione ,
+        // Direzione DOWN
         if (imgcurrent == imgs.length-1) {
             return false;
         } else {
@@ -125,6 +127,12 @@ function determineScrollPos(isUpward) {
     }
 }
 
+/*
+    Ottieni le coordinate di un oggetto passato come parametro
+
+    Ritorna:
+        le coordinate top e left dell'oggetto
+*/
 function getCoords(elem) {
   let box = elem.getBoundingClientRect();
 
@@ -134,11 +142,12 @@ function getCoords(elem) {
   };
 }
 
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
-// TODO documentazione
+/*
+    Ritorna una funzione, che, fintanto che continua ad essere invocata, non sarà
+    attivata. La funzione sarà richiamata una seconda volta solo dopo N millisecondi.
+    Se `immediate` viene passato, verrà attivata la funzione all'inizio della scarica
+    di eventi, invece che alla fine (comportamento di default).
+*/
 function debounce(func, wait, immediate) {
 	var timeout;
 	return function() {
@@ -154,81 +163,51 @@ function debounce(func, wait, immediate) {
 	};
 };
 
+/* Funzione per uno scrolling programmatico con transizione */
 function scrollIt(destination, duration = 200, easing = 'linear', callback) {
+    // Costanti matematiche
+    const easings = {
+        linear(t) {
+          return t;
+        }
+    };
+    const start = window.pageYOffset; // Inizio dello scrolling
+    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime(); // Orario di inizio dello scrolling
+    // Altezza del documento (pagina web completa), ottenuta rispetto a vari controlli per trovare la maggiore
+    const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+    // Altezza della finestra
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+    // Sulla base della destinazione, calcolare l'offset
+    const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
+    // Sulla base dell'offset di destinazione, calcolare approssimatamente l'offset vero e proprio
+    const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
 
-  const easings = {
-    linear(t) {
-      return t;
-    },
-    easeInQuad(t) {
-      return t * t;
-    },
-    easeOutQuad(t) {
-      return t * (2 - t);
-    },
-    easeInOutQuad(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    },
-    easeInCubic(t) {
-      return t * t * t;
-    },
-    easeOutCubic(t) {
-      return (--t) * t * t + 1;
-    },
-    easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    },
-    easeInQuart(t) {
-      return t * t * t * t;
-    },
-    easeOutQuart(t) {
-      return 1 - (--t) * t * t * t;
-    },
-    easeInOutQuart(t) {
-      return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
-    },
-    easeInQuint(t) {
-      return t * t * t * t * t;
-    },
-    easeOutQuint(t) {
-      return 1 + (--t) * t * t * t * t;
-    },
-    easeInOutQuint(t) {
-      return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
-    }
-  };
-
-  const start = window.pageYOffset;
-  const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-  const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-  const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
-  const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
-
-  if ('requestAnimationFrame' in window === false) {
-    window.scrollTo(0, destinationOffsetToScroll);
-    if (callback) {
-      callback();
-    }
-    return;
-  }
-
-  function scroll() {
-    const now = 'now' in window.performance ? performance.now() : new Date().getTime();
-    const time = Math.min(1, ((now - startTime) / duration));
-    const timeFunction = easings[easing](time);
-    window.scrollTo(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
-
-    if (window.pageYOffset === destinationOffsetToScroll) {
-      if (callback) {
-        callback();
-      }
-      return;
+    if ('requestAnimationFrame' in window === false) {
+        window.scrollTo(0, destinationOffsetToScroll);
+        if (callback) {
+            callback();
+        }
+        return;
     }
 
-    requestAnimationFrame(scroll);
-  }
+    // Funzione con possibilità di attivare una funzione in callback
+    function scroll() {
+        // Ora
+        const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+        const time = Math.min(1, ((now - startTime) / duration));
+        const timeFunction = easings[easing](time);
+        // Scrolling vero e proprio
+        window.scrollTo(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
 
-  scroll();
+        if (window.pageYOffset === destinationOffsetToScroll) {
+            if (callback) {
+                callback();
+            }
+            return;
+        }
+
+        requestAnimationFrame(scroll);
+    }
+
+    scroll(); // Richiama la funzione, che poi richiamerà se stessa, fino a scrollare del tutto
 }
