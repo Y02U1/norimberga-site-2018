@@ -571,7 +571,9 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     left: 50%;
 }
 
-/* table_monuments.html ------------------------------------------- */
+/*
+    table_monuments.html
+*/
 
 .bg-table {
     background-image: linear-gradient(
@@ -607,14 +609,15 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
 /* Stile dei link */
 .place a {
     color: red;
+    /* Piccola transizione cromatica */
     background-size: 100% 200%;
     background-image: linear-gradient(to bottom, transparent 50%, white 50%);
     transition: background-position 0.2s;
 }
-.place a:hover {
-    background-position: 0 100%;
-}
+/* Sull'hover muovi lo sfondo, fai la transizione */
+.place a:hover { background-position: 0 100%; }
 
+/* Sfondi con piccolo scurimento */
 #detail-swarovski { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/bg-swarovski.jpg"); }
 #detail-faber-castell { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-3.jpg"); }
 #detail-nationalmuseum { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-6.jpg"); }
@@ -629,7 +632,9 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
 #detail-cuvillies { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-2.jpg"); }
 #detail-dachau { background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),url("../images/gallery-5.jpg"); }
 
-/* services.html */
+/*
+    services.html
+*/
 
 .bg-services {
     background-image: linear-gradient(
@@ -657,22 +662,32 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     top: -60%;
 }
 .bg-services a {
-    color: white;
+    color: red;
+    /* Piccola transizione cromatica */
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, transparent 50%, white 50%);
+    transition: background-position 0.2s;
 }
+/* Sull'hover muovi lo sfondo, fai la transizione */
+.bg-services a:hover { background-position: 0 100%; }
 
+/* Immagine tutta a destra */
+.imgright {
+    top: 0% !important;
+    z-index: 1; /* E rimane sopra */
+    height: 200%;
+    width: auto;
+}
+/* Tieni l'immagine un po' a sinistra dell'altra */
 .imgleft {
     left: 75%;
     height: 200%;
     width: auto;
 }
-.imgright {
-    top: 0% !important;
-    z-index: 1;
-    height: 200%;
-    width: auto;
-}
 
-/* maps.html */
+/*
+    maps.html
+*/
 
 .bg-maps {
     background-image: linear-gradient(
@@ -680,7 +695,7 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
       rgba(56, 0, 0, 0.85)
     ),url("../images/bg-contact.jpg");
     background-size: cover;
-    flex-direction: row !important;
+    flex-direction: row !important; /* In riga */
     align-items: center;
 }
 
@@ -688,13 +703,14 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     flex: 1;
     height: 700px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* I figli in colonna */
 }
 
 .bg-maps > div > div {
     flex: 1;
     text-align: center;
 }
+/* Occupa quasi tutto lo spazio, tenendo quello rimasto per lo <span> */
 .bg-maps a {
     background-size: contain;
     background-repeat: no-repeat;
@@ -706,17 +722,15 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     color: white;
     font-size: 1.5em;
 }
-.map-city-icon {
-    background-image: url("../images/map-city.png");
-}
-.map-monuments-icon {
-    background-image: url("../images/map-monuments.png");
-}
-.map-metro-icon {
-    background-image: url("../images/map-metro.png");
-}
+/* Icone */
+.map-city-icon { background-image: url("../images/map-city.png"); }
+.map-monuments-icon { background-image: url("../images/map-monuments.png"); }
+.map-metro-icon { background-image: url("../images/map-metro.png"); }
 
-/* download.html */
+/*
+    download.html
+    Pagina molto semplice, CSS elementare e privo di commento, pertanto
+*/
 
 .bg-download {
     background-image: linear-gradient(
@@ -755,14 +769,12 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     display: block;
     height: 85%;
 }
-.pdf-icon {
-    background-image: url("../images/pdf.png");
-}
-.doc-icon {
-    background-image: url("../images/doc.png");
-}
+.pdf-icon { background-image: url("../images/pdf.png"); }
+.doc-icon { background-image: url("../images/doc.png"); }
 
-/* contactme.html --------------------------------------------------------- */
+/*
+    contactme.html
+*/
 
 .bg-contactme {
     background-image: linear-gradient(
@@ -778,26 +790,26 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     width: 90%;
 }
 
+/* Spazia dalla destra */
 #mail > *:not(h1) { padding: 0 0 0 4em; }
 #mail > h1 { padding: 2em 0 0 2em; }
 
+/* Definisci le dimensioni dei vari campi */
 #nome {
     width: 40%;
     font-size: 1.5em;
 }
-
 #mittente {
     width: 40%;
     font-size: 1.5em;
 }
-
 #oggetto {
     width: 100%;
     font-size: 1.5em;
 }
-
 #mail span { width: 15%; }
 
+/* Il bottone per inviare la mail */
 #mail a {
     color: white;
     text-decoration: none;
@@ -809,12 +821,12 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     display: table;
     border: 1px solid white;
 }
-
 #mail a:hover {
     background-color: white;
     color: rgba(56, 0, 0, 0.85);
 }
 
+/* Font con serif, più tipografico e meno moderno */
 #mail > form > * { font-family: Georgia; }
 #mail textarea {
     width: 100%;
@@ -822,4 +834,4 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     font-size: 1.5em;
 }
 
-input { margin-bottom: 10px; }
+input { margin-bottom: 10px; } /* Posizionamento rispetto agli altri elementi */
