@@ -601,7 +601,11 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     align-content: flex-start;
     flex-wrap: wrap; /* Manda capo all'occorrenza */
 }
-.bg-table h2 { margin-bottom: 2em; }
+.bg-table h2 { margin-bottom: 0.5em; }
+.bg-table h3 {
+    color: yellow;
+    margin-bottom: 1.5em;
+}
 
 .place {
     width: 25%;
