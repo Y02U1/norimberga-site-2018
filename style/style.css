@@ -77,6 +77,7 @@ ul { list-style-type: none; /* Togli i punti agli <ul> */ }
 }
 
 #side-menu-title {
+    /* Stila il testo del titoletto del side-menu */
     text-align: center;
     padding: 10% 0% 10% 0%;
     text-transform: capitalize;
@@ -87,26 +88,26 @@ ul { list-style-type: none; /* Togli i punti agli <ul> */ }
 li.menu-el { text-transform: uppercase; }
 
 #circle {
+    /* Dimensioni */
     height: 100px;
     width: 100px;
-    border-radius: 50%;
+    border-radius: 50%; /* Rendi un cerchio */
     position: fixed;
     top: 40%;
-    left: -50px; /* MODIFICARE QUA FIXME */
-    background-color: #FF5747;
-    transition: left 1s;
-    z-index: 1;
+    left: -50px;
+    background-color: #FF5747; /* Colore di sfondo */
+    transition: left 1s; /* Transizione sul movimento out-in */
+    z-index: 1; /* Mantieni in primo piano */
 }
 
 #right-circle {
+    /* Larghezza 50%, altezza 100% */
     height: 100%;
     width: 50%;
-    float: right;
+    float: right; /* Metti nel semicerchio di destra */
 }
 
-#right-circle > i:hover {
-    color: white;
-}
+#right-circle > i:hover { color: white; } /* Hover */
 .open-menu {
     font-size: 30px;    /* Dimensione grande */
     cursor: pointer;    /* Cambia il cursore */
@@ -115,7 +116,7 @@ li.menu-el { text-transform: uppercase; }
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
+/* Stila bianchi i link, togli l'underline e posiziona un po' più a destra */
 li > a {
     color: white;
     text-decoration: none;
@@ -129,11 +130,12 @@ li > a {
 .active { color: #FF5747; }
 li > a:hover { color: #FF5747; }
 
+/* Stila ciò che chiude il menu */
 #collapse-menu {
     padding: 10px;
     cursor: pointer;
 }
-#collapse-menu:hover { color: #FF5747; }
+#collapse-menu:hover { color: #FF5747; } /* Hover */
 
 /* RWD */
 @media only screen and (max-width: 1366px) {
@@ -287,11 +289,13 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
 /* PAGE: gallery.html */
 
 #bg-gallery {
+    /* Sfondo */
     background-image: linear-gradient(
       rgba(56, 0, 0, 0.85),
       rgba(56, 0, 0, 0.85)
     ),url("../images/bg-contact.jpg");
-    width: 100%;
+    width: 100%; /* Massima larghezza */
+    /* Imposta una flexbox per le immagini */
     flex: 1;
     background-size: cover;
     display: flex;
@@ -300,47 +304,48 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
 }
 
 .gallery-row {
+    /* Imposta una seconda flexbox per le righe d'immagini */
     display: flex;
     width: 100%;
 }
 
 .gallery-row img {
-    object-fit: cover;
+    object-fit: cover; /* Mantieni l'aspect-ratio, ma resize */
     height: 95%;
     width: 95%;
 }
 .gallery-row > div {
-    position: relative;
-    border: 20px solid transparent;
+    position: relative; /* Per i figli con "absolute" */
+    border: 20px solid transparent; /* Per lo spacing */
 }
 .gallery-row > div > span {
+    /* Centra rispetto all'immagine */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-57%, -57%);
+    /* Stila la box */
     background-color: white;
     text-align: center;
     font-size: 0.8em;
     padding: 8px;
     text-transform: uppercase;
+    /* Transizione */
     transition: opacity 0.5s;
+    /* Default: opacity 0 - trasparente */
     opacity: 0;
 }
-.gallery-row > div:hover > span {
-    opacity: 1;
-}
-.gallery-row > div > * {
-    cursor: zoom-in; /* Modifica il cursore del mouse quando sulle immagini della galleria (lente) */
-}
-
+/* Mostra la didascalia sull'hover */
+.gallery-row > div:hover > span { opacity: 1; }
+/* Modifica il cursore del mouse quando sulle immagini della galleria (lente) */
+.gallery-row > div > * { cursor: zoom-in; }
+/*RWD*/
 @media only screen and (max-height: 768px) {
     .gallery-row img {
         height: 90%;
         width: 90%;
     }
-    .gallery-row > div {
-        border: 10px solid transparent;
-    }
+    .gallery-row > div { border: 10px solid transparent; }
 }
 
 /* The Modal (background) */
@@ -409,39 +414,55 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
+    .modal-content { width: 100%; }
 }
 
 /* PAGE: days.html */
 
 .bg-days {
+    /* Sfondo */
     background-image: linear-gradient(
       rgba(56, 0, 0, 0.85),
       rgba(56, 0, 0, 0.85)
     ),url("../images/bg-contact.jpg");
     background-size: cover;
+    /* Metti in riga, sovrascrivendo lo stile precedente */
     flex-direction: row !important;
 }
 
+/* Contenitore della timeline */
 .timeline-container {
     width: 100%;
     margin: 1em;
     position: absolute;
     text-align: center;
     margin: 0;
-    left: 200%;
+    left: 200%; /* Metti fuori dal viewport */
+    /* Animazione slide in-out */
     transition: left 1s;
     top: 50%;
 }
-
+/* Crea la linea */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 5%;
+    height: 6px;
+    margin-top: -3px; /* -height/2 */
+    background: white; /* Bianca */
+}
 #timeline-active {
-    left: 0;
+    left: 0; /* Metti dentro al viewport */
     position: absolute;
     top: 50%;
 }
 
+/*
+    days.html -> heading
+    Stilati come proprietà di testo e posizionamento
+*/
 .bg-days h1 {
     color: white;
     position: absolute;
@@ -451,9 +472,10 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     transition: opacity 0.1s;
     transform: translate(-50%,-50%);
 }
+/* Sull'hover delle freccettine */
 .bg-days h1 > i:hover {
-    color: #FF5747;
-    cursor: pointer;
+    color: #FF5747; /* Cambia colore */
+    cursor: pointer; /* Mostra un puntatore (sono cliccabili) */
 }
 .bg-days h4 {
     color: white;
@@ -467,37 +489,33 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     display: inline-block;
 }
 
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    width: 90%;
-    top: 50%;
-    left: 5%;
-    height: 6px;
-    margin-top: -3px; /* -height/2 */
-    background: white;
-}
+/*
+    days.html -> bubbles
+*/
 
 .event-bubble {
+    /* Circolari */
     width: 50px;
     height: 50px;
+    border-radius: 50%;
+    /* Posiziona */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: inline-block;
+    /* Controllo e child-aligning*/
     background-color: white;
     border: 4px solid #FF9F55;
     vertical-align: middle;
-    border-radius: 50%;
 }
 
 .event-bubble img {
+    /* Metti le immagini bene nel genitore */
     width: 100%;
     border-radius: 50%;
 }
 
-.event-bubble:hover .box { visibility: visible; }
 
 .event-bubble > i, .open-detail {
     position: absolute;
@@ -512,41 +530,44 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
 .event-bubble[onclick]:hover img { display: none; }
 .event-bubble[onclick]:hover { cursor: pointer; }
 
-
 .box {
     position: absolute;
-    /* top: 105%; */
-    /* left: -180%; Regolato da timeline.js per         | text
-    right: 50%;  Regolato da timeline.js per    text |         */
     border-style: solid;
     color: white;
-    width: 785px; /* Regolato da timeline.js */
-    visibility: hidden;
+    width: 785px; /* Larghezza contentuto */
+    visibility: hidden; /* Default: nascondi */
 }
+/* Hover sulla bolla -> mostra box */
+.event-bubble:hover .box { visibility: visible; }
 
-.box > h3 { font-size: 1.5em; }
-.down { left: 20%; }
+.box > h3 { font-size: 1.5em; } /* Stila l'heading */
+
+/* Spazio addizionale, a seconda che sia sopra o sotto */
 .down .box > h3 { margin-top: 30px; }
 .up .box > h3 { margin-top: 0; }
 .down .box > p { margin-bottom: 0; }
 .up .box > p { margin-bottom: 50px; }
 .end.up .box > p { margin-bottom: 80px; }
 .end.down .box > h3 { margin-top: 60px; }
+
+/* Posiziona sotto e sopra la bolla */
 .down .box { top: 105%; }
 .up .box { bottom: 125%; }
+/* Posiziona a inizio e fine linea */
 .start { left: 5%; }
 .end { left: 95%; }
 
+/* Proprietà del testo a seconda che sia a sinistra o destra */
 .left .box {
-    padding: 0px 20px 0px 0px; /* Regolato da timeline.js */
-    text-align: right; /* Regolato da timeline.js */
-    border-width: 0px 2px 0px 0px; /* Regolato da timeline.js */
+    padding: 0px 20px 0px 0px;
+    text-align: right;
+    border-width: 0px 2px 0px 0px;
     right: 50%;
 }
 .right .box {
-    padding: 0px 0px 0px 20px; /* Regolato da timeline.js */
-    text-align: left; /* Regolato da timeline.js */
-    border-width: 0px 0px 0px 2px; /* Regolato da timeline.js */
+    padding: 0px 0px 0px 20px;
+    text-align: left;
+    border-width: 0px 0px 0px 2px;
     left: 50%;
 }
 
@@ -558,15 +579,14 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
       rgba(56, 0, 0, 0.85)
     ),url("../images/bg-contact.jpg");
     background-size: cover;
+    /* Crea una flexbox orizzontale */
     flex-direction: row !important;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Manda capo all'occorrenza */
 }
-.bg-table h2 {
-    margin-bottom: 2em;
-}
+.bg-table h2 { margin-bottom: 2em; }
 
 .place {
     width: 25%;
@@ -575,18 +595,15 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     background-position: center;
     color: white;
     text-align: center;
-
+    /* Dimensione della box */
     flex: 1;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 25%;
 }
-.place i {
-    font-size: 2.5em;
-}
-.place table {
-    width: 100%;
-}
+
+.place i { font-size: 2.5em; } /* Dimensione delle icone */
+.place table { width: 100%; } /* Espanditi in tutta la pagina */
 /* Stile dei link */
 .place a {
     color: red;
