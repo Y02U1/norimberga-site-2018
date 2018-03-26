@@ -485,6 +485,9 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     transition: opacity 0.1s;
     transform: translate(-50%,-50%);
 }
+@media only screen and (max-height: 700px){
+    .bg-days h1 { top: -1500%; }
+}
 /* Sull'hover delle freccettine */
 .bg-days h1 > i:hover {
     color: #FF5747; /* Cambia colore */
@@ -562,6 +565,18 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
 .up .box > p { margin-bottom: 50px; }
 .end.up .box > p { margin-bottom: 80px; }
 .end.down .box > h3 { margin-top: 60px; }
+@media only screen and (max-height: 700px){
+    .box { font-size: 0.7em; }
+    .down .box > h3 { margin-top: 20px; }
+    .up .box > p { margin-bottom: 30px; }
+    .end.up .box > p { margin-bottom: 40px; }
+    .end.down .box > h3 { margin-top: 30px; }
+    .event-bubble > i { font-size: 1.2em; }
+    .open-detail > i { font-size: 0.7em; }
+}
+@media only screen and (max-width: 1366px){
+    .box { width: 550px; }
+}
 
 /* Posiziona sotto e sopra la bolla */
 .down .box { top: 105%; }
@@ -621,6 +636,12 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     flex-basis: 25%;
 }
 
+@media only screen and (max-width: 1366px){
+    .place { font-size: 0.7em; }
+}
+@media only screen and (max-height: 700px){
+    .place { min-height: 350px; }
+}
 .place i { font-size: 2.5em; } /* Dimensione delle icone */
 .place table { width: 100%; } /* Espanditi in tutta la pagina */
 /* Stile dei link */
@@ -661,7 +682,7 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     background-size: cover;
     color: white;
 }
-
+.logo { top: 100% !important; }
 .bg-services h2 {
     font-size: 2em;
     padding: 1em 0 0 1em;
@@ -672,7 +693,9 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     font-size: 1em;
     padding: 0 0 0 2.5em;
 }
-
+@media only screen and (max-height: 700px){
+    .bg-services p { font-size: 0.7em; }
+}
 .bg-services img {
     position: absolute;
     right: 2%;
@@ -722,7 +745,9 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
     display: flex;
     flex-direction: column; /* I figli in colonna */
 }
-
+@media only screen and (max-height: 700px){
+    .bg-maps > div { height: 500px; }
+}
 .bg-maps > div > div {
     flex: 1;
     text-align: center;
@@ -819,6 +844,9 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
 #mittente {
     width: 40%;
     font-size: 1.5em;
+}
+@media only screen and (max-width: 1366px){
+    #mittente, #nome { width: 30%; }
 }
 #oggetto {
     width: 100%;
