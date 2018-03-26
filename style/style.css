@@ -1,193 +1,72 @@
-html {
-    height: 100%;
-}
+/*
+    <html> e <body>
+*/
 
-html#slide, body {
-    margin: 0px;
-    height: 800%;
-    overflow-x: hidden;
+/* Normalmente altezza <html> = 100%... */
+html { height: 100%; }
+/* ...Tranne quando "ci sono delle slide", allora aumentiamo l'altezza */
+html#slide { height: 800%; }
+
+body {
+    margin: 0px; /* Niente margini */
+    height: 100%; /* Altezza standard */
+    overflow-x: hidden; /* Evitare l'overflow orizzontale, indesiderato */
+    /* Selezione del font: moderno e ben supportato */
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
-body {
-    height: 100%;
-}
+/*
+    Contatore degli accessi
+*/
 
 .contatoreaccessi {
-    position: fixed;
-    top: 0;
-    right: 0;
+    position: fixed; /* Posiziona relativamente alla viewport... */
+    top: 0; /* ...In alto */
+    right: 0; /* ...A destra */
 }
 
-/* Headings */
+/*
+    Headings
+*/
 
-h3 {
-    font-size: 1.5em;
-}
-
+h3 { font-size: 1.5em; }
 h2 {
     margin-top: 0;
     padding-top: 20px;
     font-size: 2em;
 }
-
 h1 {
     margin-top: 0px;
     font-size: 2.8em;
 }
 
+/* RWD */
 @media only screen and (max-width: 1366px) {
-    .img > div > * {
-        font-size: 0.8em;
-    }
+    .img > div > * { font-size: 0.8em; }
 }
 
 @media only screen and (max-width: 1366px) {
-    h1 {
-        font-size: 1.5em !important;
-    }
-    h2 {
-        font-size: 1.2em !important;
-    }
-    h3 {
-        font-size: 1em !important;
-    }
+    h1 { font-size: 1.5em !important; }
+    h2 { font-size: 1.2em !important; }
+    h3 { font-size: 1em !important; }
 }
 
-#side-menu > * {
-    color: white;
-}
+/*
+    Side-menu
+*/
+
+/* Colora tutto di bianco */
+#side-menu > * { color: white; }
 
 #side-menu {
     width: 0%; /* Lunghezza fissa per la barra sulla SX */
-    height: 100%;
-    position: fixed;
+    height: 100%; /* Altezza 100% */
+    position: fixed; /* Fisso sul viewport */
     overflow: hidden; /* Permetti l'overflow, necessario per le tooltip e da alternare durante la transizione */
-    z-index: 1;
 
-    background-color: rgb(56, 0, 0);
-    transition: width 0.7s;
-    font-size: 1em;
-}
-
-@media only screen and (max-width: 1366px) {
-    #side-menu {
-        font-size: 0.7em;
-    }
-}
-
-#fullpage {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    transform: translateX(0%);
-    transition: transform 0.7s;
-}
-
-.img {
-    flex: 1;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    flex-basis: 0;
-}
-
-.img1 { background-image: url("../images/bg-intro.jpg"); }
-.img2 { background-image: url("../images/bg-norimberga.jpg"); }
-.img3 { background-image: url("../images/bg-monaco.jpg"); }
-.img4 { background-image: url("../images/bg-swarovski.jpg"); }
-.img5 { background-image: url("../images/bg-bmw.jpg"); }
-.img6 { background-image: url("../images/bg-process.jpg"); }
-.img7 { background-image: url("../images/bg-allianz.jpg"); }
-.img8 { background-image: url("../images/bg-contact.jpg"); }
-
-.img > div {
-    background-color: rgba(56, 0, 0, 0.85);
-    padding-left: 5%;
-    padding-right: 5%;
-    width: 40%;
-    height: 100%;
-    transition: width 2s;
-    position: relative;
-}
-
-.img > div > * {
-    color: white;
-    transition: opacity 1s;
-    opacity: 1;
-}
-
-.btn-round {
-    display: inline-block;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-
-    background-color: rgba(255, 255, 255, 0);
-    border: 1px solid white;
-    font-size: 3em;
-    color: white;
-}
-
-@media only screen and (max-width: 1366px) {
-    .btn-round {
-        height: 64px;
-        width: 64px;
-        font-size: 2em;
-    }
-}
-
-.buttons-intro td:nth-child(1){
-    text-align: center;
-    font-style: italic;
-    font-size: 1.3em;
-}
-
-.buttons-intro td:nth-child(2){
-    vertical-align: middle;
-}
-
-@keyframes hint {
-    0% {transform: translateY(0);}
-    80% {transform: translateY(10%);}
-    100% {transform: translateY(0);}
-}
-
-#hint {
-    position: absolute;
-    bottom: 0;
-    right: 30%;
-    font-size: 2em;
-    text-align: center;
-    font-style: italic;
-    animation: hint 1s infinite;
-}
-
-td { padding-bottom: 5px; }
-
-#accompagnatori {
-    width: 100%;
-    position: absolute;
-}
-
-#accompagnatori td { width: 33.33%; }
-
-#accompagnatori div {
-    display: inline-block;
-    vertical-align: top;
-}
-
-#accompagnatori .btn-round { font-size: 4em; }
-#accompagnatori span:nth-child(1) { font-size: 1.7em; }
-#accompagnatori span:not(:nth-child(1)) {
-    font-style: italic;
-    padding-left: 1em;
-}
-@media only screen and (max-width: 1366px) {
-    #accompagnatori .btn-round { font-size: 3em; }
-    #accompagnatori span:nth-child(1) { font-size: 1.4em; }
-    #accompagnatori span:not(:nth-child(1)) { font-size: 0.8em; }
+    background-color: rgb(56, 0, 0); /* Sfondo vermiglio */
+    transition: width 0.7s; /* Transizione sull'allargamento */
+    font-size: 1em; /* Dimensione del font */
 }
 
 ul { list-style-type: none; /* Togli i punti agli <ul> */ }
@@ -246,6 +125,7 @@ li > a {
     padding-bottom: 10px;
     font-size: 1.5em;
 }
+/* Link attivi e hover */
 .active { color: #FF5747; }
 li > a:hover { color: #FF5747; }
 
@@ -254,6 +134,155 @@ li > a:hover { color: #FF5747; }
     cursor: pointer;
 }
 #collapse-menu:hover { color: #FF5747; }
+
+/* RWD */
+@media only screen and (max-width: 1366px) {
+    #side-menu { font-size: 0.7em; }
+}
+
+/*
+    Area principale e HOME (index.html)
+*/
+
+#fullpage {
+    width: 100%; /* 100% larghezza pagina */
+    /* Flexbox verticale per le slide */
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Altezza ALMENO 100% della pagina */
+    /* Proprietà per le transizioni */
+    transform: translateX(0%);
+    transition: transform 0.7s;
+}
+
+.img {
+    flex: 1; /* Ripartire lo spazio in parti uguali */
+    background-size: cover; /* Il background "copre" tutto */
+    background-repeat: no-repeat; /* Evitare repeat */
+    background-position: center center; /* Centrato */
+    flex-basis: 0; /* Valore base d'allargamento 0:ignora */
+}
+
+/* Sfondi */
+.img1 { background-image: url("../images/bg-intro.jpg"); }
+.img2 { background-image: url("../images/bg-norimberga.jpg"); }
+.img3 { background-image: url("../images/bg-monaco.jpg"); }
+.img4 { background-image: url("../images/bg-swarovski.jpg"); }
+.img5 { background-image: url("../images/bg-bmw.jpg"); }
+.img6 { background-image: url("../images/bg-process.jpg"); }
+.img7 { background-image: url("../images/bg-allianz.jpg"); }
+.img8 { background-image: url("../images/bg-contact.jpg"); }
+
+/* Contenitori del contenuto delle "slide" */
+.img > div {
+    background-color: rgba(56, 0, 0, 0.85); /* Sfondo semitrasparente */
+    /* Larghezza 50%, con il padding */
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 40%;
+    height: 100%; /* Altezza 100% */
+    transition: width 2s; /* Transizione sull'allargamento, usata in fondo */
+    position: relative; /* Posizione relativa, usato per i figli "absolute" */
+}
+
+.img > div > * {
+    color: white; /* Colora di bianco */
+    transition: opacity 1s; /* Transizione sull'opacità */
+    opacity: 1; /* Default: opacità massima */
+}
+
+/*
+    index.html -> bottoni circolari
+*/
+
+.btn-round {
+    display: inline-block;
+    /* Dimensione */
+    height: 100px;
+    width: 100px;
+    /* Forma circolare */
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0); /* Trasparente */
+    border: 1px solid white; /* Bordo bianco */
+    font-size: 3em; /* Ingrandisci: il contenuto è un'icona*/
+    color: white; /* Bianco */
+}
+
+/*RWD*/
+@media only screen and (max-width: 1366px) {
+    .btn-round {
+        height: 64px;
+        width: 64px;
+        font-size: 2em;
+    }
+}
+
+/* Ingrandisci il primo <td>, che è un titoletto e centralo */
+.buttons-intro td:nth-child(1){
+    text-align: center;
+    font-style: italic;
+    font-size: 1.3em;
+}
+
+/* Descrizione del bottone, centrala verticalmente */
+.buttons-intro td:nth-child(2){ vertical-align: middle; }
+
+/*
+    index.html -> "hint" animata
+*/
+
+/* Animazione: down-swinging */
+@keyframes hint {
+    0% {transform: translateY(0);}
+    80% {transform: translateY(10%);}
+    100% {transform: translateY(0);}
+}
+#hint {
+    /* Posiziona in fondo */
+    position: absolute;
+    bottom: 0;
+    right: 30%; /* Centrato */
+    /* Stile del testo */
+    font-size: 2em;
+    text-align: center;
+    font-style: italic;
+    animation: hint 1s infinite; /* Assegna l'animazione (loop) */
+}
+
+/*
+    index.html -> accompagnatori
+*/
+
+td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
+
+#accompagnatori {
+    width: 100%; /* Espanditi */
+    position: absolute; /* Togli dalla struttura della pagina */
+}
+
+#accompagnatori td { width: 33.33%; } /* Occupa 1/3 */
+
+#accompagnatori div {
+    /* Aligning */
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Ingrandire le icone */
+#accompagnatori .btn-round { font-size: 4em; }
+/* Stilare le didascalie a fianco */
+#accompagnatori span:nth-child(1) { font-size: 1.7em; }
+#accompagnatori span:not(:nth-child(1)) {
+    font-style: italic;
+    padding-left: 1em;
+}
+/*RWD*/
+@media only screen and (max-width: 1366px) {
+    #accompagnatori .btn-round { font-size: 3em; }
+    #accompagnatori span:nth-child(1) { font-size: 1.4em; }
+    #accompagnatori span:not(:nth-child(1)) { font-size: 0.8em; }
+}
 
 /* PAGE: gallery.html */
 
