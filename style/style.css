@@ -669,7 +669,7 @@ td { padding-bottom: 5px; } /* Aggiungi un padding in basso a tutte le <td> */
 
 .bg-services p {
     position: relative;
-    font-size: 1.5em;
+    font-size: 1em;
     padding: 0 0 0 2.5em;
 }
 
