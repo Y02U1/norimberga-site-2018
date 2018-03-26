@@ -77,7 +77,7 @@ h1 {
 }
 
 #fullpage {
-    width: 100%; /**/
+    width: 100%;
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -93,30 +93,14 @@ h1 {
     flex-basis: 0;
 }
 
-.img1 {
-    background-image: url("../images/bg-intro.jpg");
-}
-.img2 {
-    background-image: url("../images/bg-norimberga.jpg");
-}
-.img3 {
-    background-image: url("../images/bg-monaco.jpg");
-}
-.img4 {
-    background-image: url("../images/bg-swarovski.jpg");
-}
-.img5 {
-    background-image: url("../images/bg-bmw.jpg");
-}
-.img6 {
-    background-image: url("../images/bg-process.jpg");
-}
-.img7 {
-    background-image: url("../images/bg-allianz.jpg");
-}
-.img8 {
-    background-image: url("../images/bg-contact.jpg");
-}
+.img1 { background-image: url("../images/bg-intro.jpg"); }
+.img2 { background-image: url("../images/bg-norimberga.jpg"); }
+.img3 { background-image: url("../images/bg-monaco.jpg"); }
+.img4 { background-image: url("../images/bg-swarovski.jpg"); }
+.img5 { background-image: url("../images/bg-bmw.jpg"); }
+.img6 { background-image: url("../images/bg-process.jpg"); }
+.img7 { background-image: url("../images/bg-allianz.jpg"); }
+.img8 { background-image: url("../images/bg-contact.jpg"); }
 
 .img > div {
     background-color: rgba(56, 0, 0, 0.85);
@@ -126,7 +110,6 @@ h1 {
     height: 100%;
     transition: width 2s;
     position: relative;
-    /* z-index: 1; */
 }
 
 .img > div > * {
@@ -146,16 +129,6 @@ h1 {
     font-size: 3em;
     color: white;
 }
-
-/* @keyframes blink {
-    0% {color: white;}
-    50% {color: transparent;}
-    100% {color: white;}
-}
-
-.btn-round:hover {
-    animation: blink 0.8s infinite;
-} */
 
 @media only screen and (max-width: 1366px) {
     .btn-round {
@@ -191,55 +164,31 @@ h1 {
     animation: hint 1s infinite;
 }
 
-.desc {
-    height: 100%;
-}
-
-.city-summary, .city-summary td {
-    border: solid 1px white;
-    border-collapse: collapse;
-}
-
-td {
-    padding-bottom: 5px;
-}
+td { padding-bottom: 5px; }
 
 #accompagnatori {
     width: 100%;
     position: absolute;
 }
 
-#accompagnatori td {
-    width: 33.33%;
-}
+#accompagnatori td { width: 33.33%; }
 
 #accompagnatori div {
     display: inline-block;
     vertical-align: top;
 }
-#accompagnatori .btn-round {
-    font-size: 4em;
-}
-#accompagnatori span:nth-child(1) {
-    font-size: 1.7em;
-}
-#accompagnatori span:nth-child(5), #accompagnatori span:nth-child(3) {
+
+#accompagnatori .btn-round { font-size: 4em; }
+#accompagnatori span:nth-child(1) { font-size: 1.7em; }
+#accompagnatori span:not(:nth-child(1)) {
     font-style: italic;
     padding-left: 1em;
 }
 @media only screen and (max-width: 1366px) {
-    #accompagnatori .btn-round {
-        font-size: 3em;
-    }
-    #accompagnatori span:nth-child(1) {
-        font-size: 1.4em;
-    }
-    #accompagnatori span:nth-child(3), #accompagnatori span:nth-child(5) {
-        font-size: 0.8em;
-    }
+    #accompagnatori .btn-round { font-size: 3em; }
+    #accompagnatori span:nth-child(1) { font-size: 1.4em; }
+    #accompagnatori span:not(:nth-child(1)) { font-size: 0.8em; }
 }
-
-/* BEGIN */
 
 ul { list-style-type: none; /* Togli i punti agli <ul> */ }
 
@@ -257,75 +206,6 @@ ul { list-style-type: none; /* Togli i punti agli <ul> */ }
 }
 
 li.menu-el { text-transform: uppercase; }
-
-li#father {
-    padding-bottom: 0%;
-    padding-top: 5%;
-    cursor: pointer;
-}
-
-li#father::before {
-    content: "";
-    padding-left: 5%;
-}
-
-ul#sub-menulist { padding: 5% 0% 0% 0%; }
-
-/* Singolo elemento del sottomenu dei giorni */
-li.submenu-el {
-    background-color: #FF8547;
-    padding: 0% 0% 0% 5%; /* Spazio SX 2 - modifica 5% */
-    transition: height 1s;
-    height: 40px;
-}
-
-#btn1 {
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ),url("../images/btn1-swarovski.jpg");
-    background-size: cover;
-}
-
-#btn2 {
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ), url("../images/btn2-fabercastell.jpg");
-    background-size: cover;
-}
-
-#btn3 {
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ),url("../images/btn3-hauptmarkt.jpg");
-    background-size: cover;
-}
-
-#btn4 {
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ),url("../images/btn4-deutches.jpg");
-    background-size: cover;
-}
-
-#btn5 {
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ),url("../images/btn5-bmw.jpg");
-    background-size: cover;
-}
-
-#btn6 {
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ),url("../images/btn6-dachau.jpg");
-    background-size: cover;
-}
 
 #circle {
     height: 100px;
@@ -348,15 +228,13 @@ li.submenu-el {
 #right-circle > i:hover {
     color: white;
 }
-
-#openmenu {
-    width: 32px;
-    height: 32px;
-    position: relative;
-    top: 50%;
-    left: 15%;
-    transform: translateY(-50%);
-    cursor: pointer;
+.open-menu {
+    font-size: 30px;    /* Dimensione grande */
+    cursor: pointer;    /* Cambia il cursore */
+    line-height: 100px; /* Centra il testo */
+    padding-left: 10px; /* Sposta la freccia un po' da SX */
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 li > a {
@@ -368,80 +246,14 @@ li > a {
     padding-bottom: 10px;
     font-size: 1.5em;
 }
-.active {
-    color: #FF5747;
-}
-li > a:hover {
-    color: #FF5747;
-}
-
-.open-menu {
-    font-size: 30px;    /* Dimensione grande */
-    cursor: pointer;    /* Cambia il cursore */
-    line-height: 100px; /* Centra il testo */
-    padding-left: 10px; /* Sposta la freccia un po' da SX */
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.tooltip-trigger > .tooltip {
-    display: table-cell;
-    opacity: 0;
-    width: 300px;
-    height: 128px;
-    background-color: rgb(108, 255, 136);
-    color: black;
-    text-align: center;
-    vertical-align: middle;
-    padding: 5px 0;
-    border-radius: 6px;
-
-    position: relative;
-    left: 90%;
-    top: -40%;
-    z-index: -1;
-    transition: left 1s, opacity 1s;
-    text-transform: none;
-}
-
-.tooltip-trigger > .tooltip > ul { padding: 10px 0px 0px 0px; }
-
-.tooltip-trigger > .tooltip > ul > li { padding: 3px 0px 3px 0px; }
-
-.tooltip-trigger:hover > .tooltip {
-    left: 110%;
-    opacity: 1;
-    z-index: 0;
-}
-
-.tooltip-trigger > .tooltip::after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent rgb(108, 255, 136) transparent transparent;
-}
-
-.tooltip-trigger { overflow: hidden; }
-.tooltip-trigger:hover { overflow: visible; }
-
-.sublink {
-    transition: left 0.5s;
-    transition-timing-function: ease-in;
-    color: white;
-    /* font-weight: bold; */
-}
+.active { color: #FF5747; }
+li > a:hover { color: #FF5747; }
 
 #collapse-menu {
     padding: 10px;
     cursor: pointer;
 }
-#collapse-menu:hover {
-    color: #FF5747;
-}
+#collapse-menu:hover { color: #FF5747; }
 
 /* PAGE: gallery.html */
 
@@ -573,7 +385,7 @@ li > a:hover {
     }
 }
 
-/* PAGE: day1.html */
+/* PAGE: days.html */
 
 .bg-days {
     background-image: linear-gradient(
@@ -671,9 +483,6 @@ li > a:hover {
 .event-bubble[onclick]:hover img { display: none; }
 .event-bubble[onclick]:hover { cursor: pointer; }
 
-.down {
-    left: 20%;
-}
 
 .box {
     position: absolute;
@@ -687,18 +496,18 @@ li > a:hover {
 }
 
 .box > h3 { font-size: 1.5em; }
-
+.down { left: 20%; }
 .down .box > h3 { margin-top: 30px; }
 .up .box > h3 { margin-top: 0; }
 .down .box > p { margin-bottom: 0; }
 .up .box > p { margin-bottom: 50px; }
 .end.up .box > p { margin-bottom: 80px; }
 .end.down .box > h3 { margin-top: 60px; }
-
 .down .box { top: 105%; }
 .up .box { bottom: 125%; }
 .start { left: 5%; }
 .end { left: 95%; }
+
 .left .box {
     padding: 0px 20px 0px 0px; /* Regolato da timeline.js */
     text-align: right; /* Regolato da timeline.js */
@@ -923,13 +732,8 @@ li > a:hover {
     width: 90%;
 }
 
-#mail > *:not(h1) {
-    padding: 0 0 0 4em;
-}
-
-#mail > h1 {
-    padding: 2em 0 0 2em;
-}
+#mail > *:not(h1) { padding: 0 0 0 4em; }
+#mail > h1 { padding: 2em 0 0 2em; }
 
 #nome {
     width: 40%;
@@ -946,9 +750,7 @@ li > a:hover {
     font-size: 1.5em;
 }
 
-#mail span {
-    width: 15%;
-}
+#mail span { width: 15%; }
 
 #mail a {
     color: white;
@@ -967,15 +769,11 @@ li > a:hover {
     color: rgba(56, 0, 0, 0.85);
 }
 
-#mail > form > * {
-    font-family: Georgia;
-}
+#mail > form > * { font-family: Georgia; }
 #mail textarea {
     width: 100%;
     height: 200px;
     font-size: 1.5em;
 }
 
-input {
-    margin-bottom: 10px;
-}
+input { margin-bottom: 10px; }
