@@ -1,2 +1,4 @@
 # norimberga-site-2018
-Website creato per il viaggio d'istruzione a Norimberga / Monaco di Baviera.
+High school - IT project: website created for the trip to Nuremberg / Munich.
+## Notes
+Libraries (jQuery, lodash...) / frameworks (Bootstrap) could not be used.
